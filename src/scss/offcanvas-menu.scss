@@ -1,0 +1,24 @@
+.offcanvas-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: calc(300px + 92px);
+}
+
+body {
+    transition: transform .3s ease;
+}
+
+.body--menu-active body {
+    transform: translate(300px, 0);
+}
+
+.offcanvas-menu__trigger-container {
+    width: 100%;
+    padding: 30px;
+}
+
+.offcanvas-menu__trigger {
+    margin-left: auto;
+}

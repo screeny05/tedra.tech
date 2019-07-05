@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link type="text/css" rel="stylesheet" href="scss/index.scss" />
     <link type="preload" as="image" href="img/smiley.svg" />
-
-    <svg style="display:none;">
-        <symbol id="polygon" viewBox="0 0 800 692.82032">
-            <polygon points="6,690.82032 794,690.82032 400,6" stroke-width="8"></polygon>
-        </symbol>
-    </svg>
 </head>
 
 <body>
@@ -26,8 +20,51 @@
         </div>
     </div>
 
+    <div class="header">
+        <img class="header__logo" src="img/logo.png">
+    </div>
+
+    <div class="offcanvas-menu js-menu-target">
+        <div class="offcanvas-menu__trigger-container">
+            <a class="offcanvas-menu__trigger hamburger js-menu-trigger" href="#">
+                <div class="hamburger__line"></div>
+                <div class="hamburger__line"></div>
+                <div class="hamburger__line"></div>
+            </a>
+        </div>
+
+        <div class="offcanvas-menux">
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA">YouTube</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/Tedraofficial">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://instagram.com/officialtedra">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://soundcloud.com/tedraofficial">SoundCloud</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+            <div class="menu__footer">
+                <a href="#imprint">Imprint</a>
+            </div>
+        </div>
+    </div>
+
     <img src="img/smiley.svg" id="smiley" style="display:none;"/>
 
-    <script type="text/javascript" src="ts/index.ts"></script>
+    <svg style="display:none;">
+        <symbol id="polygon" viewBox="0 0 800 692.82032">
+            <polygon points="6,690.82032 794,690.82032 400,6" stroke-width="8"></polygon>
+        </symbol>
+    </svg>
+
+    <script type="text/javascript" src="ts/index.ts" async></script>
 </body>
 </html>

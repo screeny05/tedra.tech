@@ -1,0 +1,16 @@
+.hamburger {
+    width: 32px;
+    display: block;
+}
+
+.hamburger__line {
+    width: 100%;
+    margin-top: 8px;
+    height: 2px;
+    background: #fff;
+    border-radius: 6px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}

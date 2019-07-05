@@ -5,7 +5,7 @@ const entities = [];
 let canvasWidthFull = 0;
 let canvasHeightFull = 0;
 
-const ENTITY_SIZE = 170;
+const ENTITY_SIZE = window.innerWidth >= 1024 ? 170 : window.innerWidth >= 768 ? 130 : window.innerWidth >= 425 ? 110 : 90;
 
 interface vec2 {
     x: number;

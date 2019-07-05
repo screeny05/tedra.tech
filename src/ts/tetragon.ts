@@ -24,3 +24,11 @@ window.addEventListener('deviceorientation', throttle(100, e => {
 window.addEventListener('load', () => {
     setTimeout(() => isLocked = false, 3000);
 });
+
+$tetragon.addEventListener('mousedown', () => {
+    $tetragon.classList.add('tetragon--down');
+});
+
+window.addEventListener('mouseup', () => {
+    $tetragon.classList.remove('tetragon--down');
+});

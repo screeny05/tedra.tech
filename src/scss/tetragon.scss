@@ -31,6 +31,10 @@ $tetragon-size: 60vmin;
     transition: transform .1s linear;
 }
 
+.tetragon--down {
+    transform: scale(.9, .9) !important;
+}
+
 .tetragon__surface {
     position: absolute;
     top: 0;
