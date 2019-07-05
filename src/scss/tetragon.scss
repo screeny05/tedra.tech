@@ -1,0 +1,60 @@
+$tetragon-size: 60vmin;
+
+.scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    perspective: 130vmin;
+    perspective-origin: 50% 43%;
+    overflow: hidden;
+    transition: opacity 2s ease .2s;
+    opacity: 0;
+}
+
+.body--loaded .scene {
+    opacity: 1;
+}
+
+.tetragon {
+    transform-style: preserve-3d;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: $tetragon-size;
+    height: $tetragon-size;
+    transform-origin: 50% 100% $tetragon-size * -0.288235294;
+    transition: transform .1s linear;
+}
+
+.tetragon__surface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke: #fff;
+    fill: none;
+    width: $tetragon-size;
+    height: $tetragon-size * 0.8660254;
+    transform-origin: 100% 100% 0;
+}
+
+.tetragon__surface--bottom {
+    transform: rotateX(90deg) scale(1.001);
+}
+
+.tetragon__surface--front {
+    transform: rotateX(19.5deg);
+}
+
+.tetragon__surface--left {
+    transform: rotateY(60deg) rotateX(-19.5deg);
+    transform-origin: 0 100% 0;
+}
+
+.tetragon__surface--right {
+    transform: rotateY(-60deg) rotateX(-19.5deg);
+}

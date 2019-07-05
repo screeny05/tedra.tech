@@ -1,0 +1,27 @@
+{
+  "name": "tedra.tech",
+  "version": "1.0.0",
+  "description": "https://www.tedra.tech/",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/screeny05/tedra.tech.git"
+  },
+  "author": "Sebastian Langer <sl@scn.cx>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/screeny05/tedra.tech/issues"
+  },
+  "homepage": "https://github.com/screeny05/tedra.tech#readme",
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "sass": "^1.22.2",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "throttle-debounce": "^2.1.0"
+  }
+}
