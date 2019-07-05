@@ -4,7 +4,7 @@
   "description": "https://www.tedra.tech/",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html -o dist"
+    "build": "parcel build src/index.html -o dist/index.html"
   },
   "repository": {
     "type": "git",
