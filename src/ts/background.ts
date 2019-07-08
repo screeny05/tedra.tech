@@ -1,11 +1,12 @@
 const $canvas = document.getElementById('bg') as HTMLCanvasElement;
 const $img = document.getElementById('smiley') as HTMLImageElement;
 const ctx = $canvas.getContext('2d');
-const entities = [];
+const entities: Entity[] = [];
+
 let canvasWidthFull = 0;
 let canvasHeightFull = 0;
-
-const ENTITY_SIZE = window.innerWidth >= 1024 ? 170 : window.innerWidth >= 768 ? 130 : window.innerWidth >= 425 ? 110 : 90;
+const entitySize = window.innerWidth >= 1024 ? 170 : window.innerWidth >= 768 ? 130 : window.innerWidth >= 425 ? 110 : 90;
+const canvasHeightAdd = 0;
 
 interface vec2 {
     x: number;
@@ -14,46 +15,50 @@ interface vec2 {
 
 interface Entity {
     pos: vec2;
+    velocity: vec2;
     rotation: number;
 }
 
 const vec2 = (x: number, y: number): vec2 => ({ x, y });
-const vec2Subtract = (a: vec2, b: vec2) => vec2(b.x - a.x, b.y - a.y);
+const vec2Subtract = (a: vec2, b: vec2) => vec2(a.x - b.x, a.y - b.y);
+const vec2Add = (a: vec2, b: vec2) => vec2(a.x + b.x, a.y + b.y);
 const vec2LengthSqrt = (a: vec2) => a.x * a.x + a.y * a.y;
+const vec2Length = (a: vec2) => Math.sqrt(vec2LengthSqrt(a));
 
 const setCanvasSize = () => {
     const dpr = window.devicePixelRatio || 1;
     $canvas.width = window.innerWidth * dpr;
-    $canvas.height = window.innerHeight * dpr;
+    $canvas.height = (window.innerHeight + canvasHeightAdd) * dpr;
     $canvas.style.width = window.innerWidth + 'px';
-    $canvas.style.height = window.innerHeight + 'px';
-    canvasWidthFull = window.innerWidth + ENTITY_SIZE;
-    canvasHeightFull = window.innerHeight + ENTITY_SIZE;
+    $canvas.style.height = (window.innerHeight + canvasHeightAdd) + 'px';
+    canvasWidthFull = window.innerWidth + entitySize;
+    canvasHeightFull = (window.innerHeight + canvasHeightAdd) + entitySize;
     ctx.scale(dpr, dpr);
 };
 
 const drawEntity = (obj: Entity) => {
     const { x, y } = obj.pos;
-    const translateX = x + ENTITY_SIZE / 2;
-    const translateY = y + ENTITY_SIZE / 2;
+    const translateX = x + entitySize / 2;
+    const translateY = y + entitySize / 2;
     ctx.save();
 
     ctx.translate(translateX, translateY);
     ctx.rotate(obj.rotation * Math.PI / 180);
     ctx.translate(-translateX, -translateY);
-    ctx.drawImage($img, obj.pos.x, obj.pos.y, ENTITY_SIZE, ENTITY_SIZE);
+    ctx.drawImage($img, obj.pos.x, obj.pos.y, entitySize, entitySize);
     ctx.restore();
 };
 
-const getEntity = (): Entity => {
+const getEntity = (x?: number, y?: number): Entity => {
     return {
-        pos: vec2(Math.random() * (canvasWidthFull) - ENTITY_SIZE, Math.random() * (canvasHeightFull) - ENTITY_SIZE),
-        rotation: Math.random() * 360 - 180
+        pos: vec2(Math.random() * canvasWidthFull - entitySize / 2, Math.random() * canvasHeightFull - entitySize / 2),
+        velocity: vec2(0, 0),
+        rotation: Math.random() * 360,
     };
 };
 
 const circleHitDetection = (a: Entity, b: Entity): boolean => {
-    return vec2LengthSqrt(vec2Subtract(a.pos, b.pos)) <= ENTITY_SIZE * ENTITY_SIZE;
+    return vec2LengthSqrt(vec2Subtract(a.pos, b.pos)) <= entitySize * entitySize;
 };
 
 const hasEntityCollision = (entity: Entity): boolean => {
@@ -61,7 +66,7 @@ const hasEntityCollision = (entity: Entity): boolean => {
 };
 
 const populateEntities = (): void => {
-    const maxIdeal = Math.floor((canvasWidthFull) * (canvasHeightFull) / (ENTITY_SIZE * ENTITY_SIZE));
+    const maxIdeal = Math.floor((canvasWidthFull) * (canvasHeightFull) / (entitySize * entitySize));
     const tryMax = 100;
 
     for(let i = 0; i < maxIdeal * tryMax; i++){
@@ -75,11 +80,13 @@ const populateEntities = (): void => {
     }
 };
 
-setCanvasSize();
-populateEntities();
-entities.map(drawEntity);
-
 window.addEventListener('resize', () => {
     setCanvasSize();
+    entities.map(drawEntity);
+});
+
+window.addEventListener('load', () => {
+    setCanvasSize();
+    populateEntities();
     entities.map(drawEntity);
 });

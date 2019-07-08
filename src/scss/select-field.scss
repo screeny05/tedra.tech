@@ -1,0 +1,33 @@
+.select-field {
+    position: relative;
+    display: inline-block;
+    line-height: 32px;
+    width: 100%;
+    max-width: 500px;
+    border-bottom: 2px solid;
+}
+
+.select-field:after {
+    content: '▽';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.select-field select {
+    border: none;
+    background: none;
+    color: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0 25px 0 5px;
+    line-height: inherit;
+    border-radius: 0;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+}

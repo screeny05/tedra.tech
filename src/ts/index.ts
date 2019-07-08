@@ -1,7 +1,8 @@
 import './background';
 import './tetragon';
 import './menu';
+import './overlay';
 
 window.addEventListener('load', () => {
-    document.documentElement.classList.add('body--loaded');
+    document.documentElement.classList.add('is--loaded');
 });

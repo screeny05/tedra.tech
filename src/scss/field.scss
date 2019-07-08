@@ -1,0 +1,43 @@
+.input-field {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: #81a1c1;
+        pointer-events: none;
+        transform: scale(0);
+        transition: transform .3s ease-in;
+        transform-origin: left center;
+    }
+
+    &:focus-within:after {
+        transform: scale(1);
+    }
+}
+
+input[type="text"],
+input[type="email"] {
+    background: none;
+    border: none;
+    color: #fff;
+    border-bottom: 2px solid;
+    line-height: 32px;
+    padding: 0 5px;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+}

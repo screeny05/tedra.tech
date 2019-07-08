@@ -1,59 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html class="is--tetragon-locked" lang="en-US">
 <head>
     <title>Tedra</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link type="text/css" rel="stylesheet" href="scss/index.scss" />
     <link type="preload" as="image" href="img/smiley.svg" />
+    <link type="preload" as="image" href="img/logo.png" />
 </head>
 
 <body>
-    <canvas class="background" id="bg" style="display:block;"></canvas>
-
-    <div class="scene">
-        <div class="tetragon">
-            <svg class="tetragon__surface tetragon__surface--bottom"><use xlink:href="#polygon"></use></svg>
-            <svg class="tetragon__surface tetragon__surface--front"><use xlink:href="#polygon"></use></svg>
-            <svg class="tetragon__surface tetragon__surface--left"><use xlink:href="#polygon"></use></svg>
-            <svg class="tetragon__surface tetragon__surface--right"><use xlink:href="#polygon"></use></svg>
+    <div class="content-wrapper">
+        <div class="header">
+            <img class="header__logo" src="img/logo.png" alt="Tedra Logo" width="364" height="87">
         </div>
-    </div>
 
-    <div class="header">
-        <img class="header__logo" src="img/logo.png">
+        <div class="background__solid"></div>
+        <canvas class="background" id="bg" style="display:block;"></canvas>
+
+        <div class="scene">
+            <div class="tetragon">
+                <svg class="tetragon__surface tetragon__surface--bottom"><use xlink:href="#polygon"></use></svg>
+                <svg class="tetragon__surface tetragon__surface--front"><use xlink:href="#polygon"></use></svg>
+                <svg class="tetragon__surface tetragon__surface--left"><use xlink:href="#polygon"></use></svg>
+                <svg class="tetragon__surface tetragon__surface--right"><use xlink:href="#polygon"></use></svg>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <div class="section__inner">
+                <h3 class="section__title">Contact</h3>
+                <div class="section__content">
+                    <form method="POST" action="https://formspree.io/tedra-official@web.de">
+                        <div class="form__field input-field">
+                            <input type="text" name="name" placeholder="Name"/>
+                        </div>
+                        <div class="form__field input-field">
+                            <input type="email" name="email" placeholder="Email"/>
+                        </div>
+                        <div class="form__field">
+                            <div class="select-field">
+                                <select name="subject">
+                                    <option>Booking Request</option>
+                                    <option>Remix Request</option>
+                                    <option>Promo</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__field">
+                            <textarea name="content" rows="7" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form__submit form__field">
+                            <button type="submit" class="button">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="imprint">
+            <div class="section__inner">
+                <h3 class="section__title">Imprint</h3>
+                <div class="section__content">
+                    <p>Libero scelerisque aptent commodo massa luctus platea dictum cursus tempus ad senectus id, eu nisl ut nec dictumst habitant curabitur sociis imperdiet bibendum. Malesuada vestibulum morbi leo amet tellus ultricies, justo praesent euismod felis duis, varius quam dapibus ut dignissim. Nunc felis cubilia parturient purus congue tempor sit fermentum dolor torquent velit risus praesent habitant fusce pellentesque, nisl penatibus vulputate vel consectetur dignissim bibendum natoque facilisi suspendisse netus litora habitasse aliquam. Magna conubia augue fermentum metus lorem, vitae placerat consectetur faucibus mi justo, eros tempor est imperdiet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="privacy">
+            <div class="section__inner">
+                <h3 class="section__title">Privacy Policy</h3>
+                <div class="section__content">
+                    <p>Libero scelerisque aptent commodo massa luctus platea dictum cursus tempus ad senectus id, eu nisl ut nec dictumst habitant curabitur sociis imperdiet bibendum. Malesuada vestibulum morbi leo amet tellus ultricies, justo praesent euismod felis duis, varius quam dapibus ut dignissim. Nunc felis cubilia parturient purus congue tempor sit fermentum dolor torquent velit risus praesent habitant fusce pellentesque, nisl penatibus vulputate vel consectetur dignissim bibendum natoque facilisi suspendisse netus litora habitasse aliquam. Magna conubia augue fermentum metus lorem, vitae placerat consectetur faucibus mi justo, eros tempor est imperdiet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
     </div>
 
     <div class="offcanvas-menu js-menu-target">
         <div class="offcanvas-menu__trigger-container">
-            <a class="offcanvas-menu__trigger hamburger js-menu-trigger" href="#">
-                <div class="hamburger__line"></div>
-                <div class="hamburger__line"></div>
-                <div class="hamburger__line"></div>
+            <a class="offcanvas-menu__trigger hamburger js-menu-trigger" href="#" aria-label="Open Menu">
+                <div class="hamburger__container">
+                    <div class="hamburger__line"></div>
+                    <div class="hamburger__line"></div>
+                    <div class="hamburger__line"></div>
+                </div>
             </a>
         </div>
 
-        <div class="offcanvas-menux">
-            <ul>
-                <li>
-                    <a href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA">YouTube</a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/Tedraofficial">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/officialtedra">Instagram</a>
-                </li>
-                <li>
-                    <a href="https://soundcloud.com/tedraofficial">SoundCloud</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-            <div class="menu__footer">
-                <a href="#imprint">Imprint</a>
+        <div class="offcanvas-menu__content">
+            <div class="justify-center">
+                <ul>
+                    <li class="list-item">
+                        <a class="list-item__link" target="_blank" href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA">YouTube</a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-item__link" target="_blank" href="https://www.facebook.com/Tedraofficial">Facebook</a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-item__link" target="_blank" href="https://instagram.com/officialtedra">Instagram</a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-item__link" target="_blank" href="https://soundcloud.com/tedraofficial">SoundCloud</a>
+                    </li>
+                    <li class="list-item">
+                        <a class="list-item__link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+        <div class="offcanvas-menu__footer">
+            <a class="offcanvas-menu__footer-link" href="#imprint">Imprint</a>
+            |
+            <a class="offcanvas-menu__footer-link" href="#privacy">Privacy Policy</a>
         </div>
     </div>
 

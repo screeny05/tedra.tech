@@ -1,0 +1,19 @@
+.list-item {
+    list-style: none;
+    margin: 0;
+    font-size: 20px;
+}
+
+.list-item__link {
+    color: #ECEFF4;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+
+    &:before {
+        content: '▷';
+        display: inline-block;
+        margin-right: .6em;
+        color: #2d3a3e;
+    }
+}

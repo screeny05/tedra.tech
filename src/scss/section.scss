@@ -1,0 +1,32 @@
+.section {
+    padding: 87px 30px 30px;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.section__inner {
+    background: #12151a;
+    min-height: 100%;
+    flex: 1 0;
+}
+
+.section__content {
+    padding: 15px;
+}
+
+.section__title {
+    background: #181b22;
+    color: #ECEFF4;
+    margin: 0;
+    padding: 15px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    &:before {
+        content: '▷';
+        margin-right: .6em;
+        color: #2d3a3e;
+    }
+}

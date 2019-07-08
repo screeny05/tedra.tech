@@ -5,15 +5,18 @@ $tetragon-size: 60vmin;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: 100vh;
     perspective: 130vmin;
     perspective-origin: 50% 43%;
     overflow: hidden;
     transition: opacity 2s ease .2s;
     opacity: 0;
+    will-change: opacity;
+    contain: paint;
+    z-index: $z-index-scene;
 }
 
-.body--loaded .scene {
+.is--loaded .scene {
     opacity: 1;
 }
 
@@ -29,6 +32,12 @@ $tetragon-size: 60vmin;
     height: $tetragon-size;
     transform-origin: 50% 100% $tetragon-size * -0.288235294;
     transition: transform .1s linear;
+    will-change: transform;
+}
+
+.is--tetragon-locked .tetragon,
+.is--menu-active .tetragon {
+    transform: none !important;
 }
 
 .tetragon--down {
