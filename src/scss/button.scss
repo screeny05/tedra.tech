@@ -1,0 +1,13 @@
+.button {
+    border: 1px solid $color-primary;
+    background: none;
+    color: #fff;
+    line-height: 52px;
+    padding: 0 15px;
+    width: 100%;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}

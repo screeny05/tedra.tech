@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link type="text/css" rel="stylesheet" href="scss/index.scss" />
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Overpass:300,900">
     <link type="preload" as="image" href="img/smiley.svg" />
     <link type="preload" as="image" href="img/logo.png" />
 </head>
@@ -29,24 +30,44 @@
 
         <div class="section" id="contact">
             <div class="section__inner">
-                <h3 class="section__title">Contact</h3>
+                <h3 class="section__title">Contact.</h3>
                 <div class="section__content">
                     <form method="POST" action="https://formspree.io/tedra-official@web.de">
                         <div class="form__field input-field">
-                            <input type="text" name="name" placeholder="Name"/>
+                            <input type="text" name="name" placeholder="Name" required="required"/>
                         </div>
                         <div class="form__field input-field">
-                            <input type="email" name="email" placeholder="Email"/>
+                            <input type="email" name="email" placeholder="Email" required="required"/>
                         </div>
-                        <div class="form__field">
-                            <div class="select-field">
-                                <select name="subject">
-                                    <option>Booking Request</option>
-                                    <option>Remix Request</option>
-                                    <option>Promo</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
+                        <div class="form__field image-radio__list">
+                            <label class="image-radio">
+                                <input class="image-radio__input" type="radio" name="subject" value="Booking Request" required="required"/>
+                                <div class="image-radio__container">
+                                    <svg class="image-radio__image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                                    <div class="image-radio__text">Booking<br/>Request</div>
+                                </div>
+                            </label>
+                            <label class="image-radio">
+                                <input class="image-radio__input" type="radio" name="subject" value="Remix Request" required="required"/>
+                                <div class="image-radio__container">
+                                    <svg class="image-radio__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24"><defs><path id="a" d="M0 0h24v24H0V0z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" d="M9.01 14H2v2h7.01v3L13 15l-3.99-4v3zm5.98-1v-3H22V8h-7.01V5L11 9l3.99 4z"/></svg>
+                                    <div class="image-radio__text">Remix<br/>Request</div>
+                                </div>
+                            </label>
+                            <label class="image-radio">
+                                <input class="image-radio__input" type="radio" name="subject" value="Promo" required="required"/>
+                                <div class="image-radio__container">
+                                    <svg class="image-radio__image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>
+                                    <div class="image-radio__text">Promo</div>
+                                </div>
+                            </label>
+                            <label class="image-radio">
+                                <input class="image-radio__input" type="radio" name="subject" value="Other" required="required" checked="checked"/>
+                                <div class="image-radio__container">
+                                    <svg class="image-radio__image" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+                                    <div class="image-radio__text">Other</div>
+                                </div>
+                            </label>
                         </div>
                         <div class="form__field">
                             <textarea name="content" rows="7" placeholder="Message"></textarea>
@@ -54,6 +75,8 @@
                         <div class="form__submit form__field">
                             <button type="submit" class="button">Send</button>
                         </div>
+
+                        <a href="#privacy" class="link">Privacy Policy</a>
                     </form>
                 </div>
             </div>
@@ -61,7 +84,7 @@
 
         <div class="section" id="imprint">
             <div class="section__inner">
-                <h3 class="section__title">Imprint</h3>
+                <h3 class="section__title">Imprint.</h3>
                 <div class="section__content">
                     <p>Libero scelerisque aptent commodo massa luctus platea dictum cursus tempus ad senectus id, eu nisl ut nec dictumst habitant curabitur sociis imperdiet bibendum. Malesuada vestibulum morbi leo amet tellus ultricies, justo praesent euismod felis duis, varius quam dapibus ut dignissim. Nunc felis cubilia parturient purus congue tempor sit fermentum dolor torquent velit risus praesent habitant fusce pellentesque, nisl penatibus vulputate vel consectetur dignissim bibendum natoque facilisi suspendisse netus litora habitasse aliquam. Magna conubia augue fermentum metus lorem, vitae placerat consectetur faucibus mi justo, eros tempor est imperdiet.</p>
                 </div>
@@ -70,9 +93,9 @@
 
         <div class="section" id="privacy">
             <div class="section__inner">
-                <h3 class="section__title">Privacy Policy</h3>
+                <h3 class="section__title">Privacy Policy.</h3>
                 <div class="section__content">
-                    <p>Libero scelerisque aptent commodo massa luctus platea dictum cursus tempus ad senectus id, eu nisl ut nec dictumst habitant curabitur sociis imperdiet bibendum. Malesuada vestibulum morbi leo amet tellus ultricies, justo praesent euismod felis duis, varius quam dapibus ut dignissim. Nunc felis cubilia parturient purus congue tempor sit fermentum dolor torquent velit risus praesent habitant fusce pellentesque, nisl penatibus vulputate vel consectetur dignissim bibendum natoque facilisi suspendisse netus litora habitasse aliquam. Magna conubia augue fermentum metus lorem, vitae placerat consectetur faucibus mi justo, eros tempor est imperdiet.</p>
+                    <p>Unsere Internetseite nutzt Formspree, einen Webdienst der Webseite https://formspree.io (nachfolgend "Formspree"). Um Ihnen die Funktionalität des Kontaktformulars zur Verfügung zu stellen, senden wir Ihre E-Mail-Adresse, Ihren Vornamen und Nachnamen an Formspree. Diese Daten werden dort verarbeitet, gespeichert und an die Energy & Light Technology Greiser GmbH per Mail an info@e-l-technology.de weitergegeben. Außerdem werden von Formspree unter anderem weitere Daten wie Ihre IP-Adresse, Ihr Typ des Browsers, die Domain der Webseite, das Datum und die Zeit des Zugriffs erhoben, um die gewünschte Funktionalität des Kontaktformulars bereitzustellen. Eine detaillierte Übersicht der erhobenen Daten finden Sie hier. Rechtsgrundlage für die Nutzung von Formspree ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO (berechtigtes Interesse). In dem vorliegenden Fall werden personenbezogene Daten in die USA übertragen werden: Die Verarbeitung, Weitergabe und Speicherung der Daten ist von Formspree in dem folgenden Dokument zusammengefasst: Hier.</p>
                 </div>
             </div>
         </div>
@@ -116,6 +139,9 @@
             <a class="offcanvas-menu__footer-link" href="#imprint">Imprint</a>
             |
             <a class="offcanvas-menu__footer-link" href="#privacy">Privacy Policy</a>
+            <div class="offcanvas-menu__subfooter">
+                &copy; 2019 Tedra
+            </div>
         </div>
     </div>
 

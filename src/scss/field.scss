@@ -1,25 +1,6 @@
 .input-field {
     position: relative;
     width: 100%;
-    max-width: 500px;
-
-    &:after {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 2px;
-        background: #81a1c1;
-        pointer-events: none;
-        transform: scale(0);
-        transition: transform .3s ease-in;
-        transform-origin: left center;
-    }
-
-    &:focus-within:after {
-        transform: scale(1);
-    }
 }
 
 input[type="text"],
@@ -27,17 +8,40 @@ input[type="email"] {
     background: none;
     border: none;
     color: #fff;
-    border-bottom: 2px solid;
-    line-height: 32px;
-    padding: 0 5px;
+    border: 1px solid;
+    line-height: 50px;
+    padding: 0 15px;
     width: 100%;
 
     &:focus {
         outline: none;
+        border-color: $color-primary;
+    }
+
+    &:-webkit-autofill {
+        -webkit-text-fill-color: #fff;
+        box-shadow: 0 0 0px 1000px #12151a inset;
+        border-color: #fff;
+        color: #fff;
+    }
+
+    &:-webkit-autofill:focus {
+        border-color: $color-primary;
     }
 }
 
 textarea {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 8em;
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 15px;
+
+    &:focus {
+        outline: none;
+        border-color: $color-primary;
+    }
 }

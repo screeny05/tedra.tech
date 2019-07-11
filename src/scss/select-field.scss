@@ -1,28 +1,39 @@
 .select-field {
     position: relative;
     display: inline-block;
-    line-height: 32px;
+    line-height: 50px;
     width: 100%;
-    max-width: 500px;
-    border-bottom: 2px solid;
+    border: 1px solid #fff;
+
+    &:focus-within {
+        border-color: $color-primary;
+    }
 }
 
 .select-field:after {
-    content: '▽';
+    content: '';
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 0;
     bottom: 0;
+    width: 24px;
     pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.select-field:focus-within:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%2328A896' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3Cpath fill='none' d='M0 0h24v24H0V0z'/%3E%3C/svg%3E");
 }
 
 .select-field select {
     border: none;
     background: none;
-    color: #fff;
+    color: rgb(110, 110, 110);
     -webkit-appearance: none;
     appearance: none;
-    padding: 0 25px 0 5px;
+    padding: 0 25px 0 15px;
     line-height: inherit;
     border-radius: 0;
     width: 100%;
@@ -30,4 +41,8 @@
     &:focus {
         outline: none;
     }
+}
+
+select.is--selected {
+    color: #fff;
 }
