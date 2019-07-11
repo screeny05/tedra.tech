@@ -11,8 +11,8 @@
     z-index: $z-index-offcanvas-menu;
 }
 
-.content-wrapper,
-.offcanvas-menu {
+.is--loaded .content-wrapper,
+.is--loaded .offcanvas-menu {
     transition: transform .3s ease;
 }
 

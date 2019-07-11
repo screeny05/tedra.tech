@@ -6,6 +6,7 @@
     bottom: 0;
     cursor: pointer;
     display: none;
+    z-index: $z-index-overlay;
 }
 
 .is--overlay-active .overlay {
