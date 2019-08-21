@@ -13,7 +13,6 @@ window.addEventListener('mousemove', throttle(100, e => {
 window.addEventListener('deviceorientation', throttle(100, e => {
     const xFac = clamp(e.gamma, -45, 45) / 45;
     const yFac = clamp(e.beta, -45, 45) / 45;
-    console.log(xFac, yFac)
     $tetragon.style.transform = `rotateY(${xFac * 15}deg) rotateX(${yFac * -15}deg)`;
 }));
 
