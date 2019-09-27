@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'overpass';
+    src: url('../font/overpass/overpass-extralight.eot');
+    src: url('../font/overpass/overpass-extralight.eot?#iefix') format('embedded-opentype'),
+        url('../font/overpass/overpass-extralight.woff2') format('woff2'),
+        url('../font/overpass/overpass-extralight.woff') format('woff'),
+        url('../font/overpass/overpass-extralight.ttf')  format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'overpass';
+    src: url('../font/overpass/overpass-heavy.eot');
+    src: url('../font/overpass/overpass-heavy.eot?#iefix') format('embedded-opentype'),
+        url('../font/overpass/overpass-heavy.woff2') format('woff2'),
+        url('../font/overpass/overpass-heavy.woff') format('woff'),
+        url('../font/overpass/overpass-heavy.ttf')  format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

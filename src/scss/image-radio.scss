@@ -30,6 +30,10 @@
     border-color: $color-primary;
 }
 
+.image-radio__input:focus-visible + .image-radio__container {
+    border-style: dashed;
+}
+
 .image-radio__image {
     fill: #fff;
     width: auto;
