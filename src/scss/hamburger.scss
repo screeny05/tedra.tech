@@ -1,5 +1,5 @@
 .hamburger {
-    padding: 30px;
+    padding: 32px 30px;
     display: block;
 }
 
@@ -16,6 +16,7 @@
     height: 2px;
     background: #fff;
     border-radius: 6px;
+    opacity: 0.8;
 
     &:nth-child(2) {
         top: 10px;

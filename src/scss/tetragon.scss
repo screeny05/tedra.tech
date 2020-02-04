@@ -9,16 +9,12 @@ $tetragon-size: 60vmin;
     perspective: 130vmin;
     perspective-origin: 50% 43%;
     overflow: hidden;
-    transition: opacity 2s ease .2s;
+    animation: 2s ease 0.2s reveal-full forwards;
     opacity: 0;
     will-change: opacity;
     contain: paint;
     z-index: $z-index-scene;
     user-select: none;
-}
-
-.is--loaded .scene {
-    opacity: 1;
 }
 
 .tetragon {

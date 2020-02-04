@@ -11,12 +11,16 @@
     min-height: 100%;
     flex: 1 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .section__content {
     padding: 15px 15px 30px;
+    width: 100%;
     max-width: 620px;
     margin: 0 auto;
+    flex: 1 1 auto;
 }
 
 .section__title {
@@ -24,7 +28,7 @@
     margin: 0;
     padding: 15px;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-align: center;
@@ -39,4 +43,8 @@
     font-size: 40px;
     margin: 0;
     padding: 0 15px;
+}
+
+.section__text {
+    text-align: justify;
 }

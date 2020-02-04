@@ -1,9 +1,12 @@
 .background {
-    transition: opacity 2s ease 1.2s;
     opacity: 0;
     clip-path: inset(87px 30px 30px);
     position: relative;
     z-index: $z-index-scene;
+}
+
+.background--is-painted {
+    animation: 2s ease reveal-background forwards;
 }
 
 .background__solid {
@@ -16,6 +19,11 @@
     z-index: $z-index-scene;
 }
 
-.is--loaded .background {
-    opacity: 0.4;
+@keyframes reveal-background {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.4;
+    }
 }
