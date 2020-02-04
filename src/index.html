@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="theme-color" content="#0a0b0e">
     <link type="text/css" rel="stylesheet" href="scss/index.scss" />
-    <script type="text/javascript" src="ts/index.ts" async></script>
-    <link type="preload" as="image" href="img/smiley.svg" />
     <link type="preload" as="image" href="img/logo.png" />
     <link type="preload" as="font" href="font/overpass/overpass-extralight.woff2" crossorigin="anonymous"/>
     <link type="preload" as="font" href="font/overpass/overpass-heavy.woff2" crossorigin="anonymous"/>
@@ -16,7 +14,7 @@
 <body>
     <div class="content-wrapper">
         <div class="header">
-            <img class="header__logo" src="img/logo.png" alt="Tedra Logo" width="364" height="87">
+            <img class="header__logo" src="~img/logo.svg" alt="Tedra Logo" inline>
         </div>
 
         <div class="background__solid"></div>
@@ -85,11 +83,20 @@
             </div>
         </div>
 
+        <div class="section">
+            <div class="section__inner">
+                <h3 class="section__title">Soundcloud.</h3>
+                <div class="section__content">
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/976112734&color=%2328a896&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                </div>
+            </div>
+        </div>
+
         <div class="section" id="imprint">
             <div class="section__inner">
                 <h3 class="section__title">Imprint.</h3>
                 <div class="section__content">
-                    <p>Libero scelerisque aptent commodo massa luctus platea dictum cursus tempus ad senectus id, eu nisl ut nec dictumst habitant curabitur sociis imperdiet bibendum. Malesuada vestibulum morbi leo amet tellus ultricies, justo praesent euismod felis duis, varius quam dapibus ut dignissim. Nunc felis cubilia parturient purus congue tempor sit fermentum dolor torquent velit risus praesent habitant fusce pellentesque, nisl penatibus vulputate vel consectetur dignissim bibendum natoque facilisi suspendisse netus litora habitasse aliquam. Magna conubia augue fermentum metus lorem, vitae placerat consectetur faucibus mi justo, eros tempor est imperdiet.</p>
+                    <p>&copy; 2020 Tedra</p>
                 </div>
             </div>
         </div>
@@ -98,7 +105,7 @@
             <div class="section__inner">
                 <h3 class="section__title">Privacy Policy.</h3>
                 <div class="section__content">
-                    <p>Unsere Internetseite nutzt Formspree, einen Webdienst der Webseite https://formspree.io (nachfolgend "Formspree"). Um Ihnen die Funktionalität des Kontaktformulars zur Verfügung zu stellen, senden wir Ihre E-Mail-Adresse, Ihren Vornamen und Nachnamen an Formspree. Diese Daten werden dort verarbeitet, gespeichert und an die Energy & Light Technology Greiser GmbH per Mail an info@e-l-technology.de weitergegeben. Außerdem werden von Formspree unter anderem weitere Daten wie Ihre IP-Adresse, Ihr Typ des Browsers, die Domain der Webseite, das Datum und die Zeit des Zugriffs erhoben, um die gewünschte Funktionalität des Kontaktformulars bereitzustellen. Eine detaillierte Übersicht der erhobenen Daten finden Sie hier. Rechtsgrundlage für die Nutzung von Formspree ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO (berechtigtes Interesse). In dem vorliegenden Fall werden personenbezogene Daten in die USA übertragen werden: Die Verarbeitung, Weitergabe und Speicherung der Daten ist von Formspree in dem folgenden Dokument zusammengefasst: Hier.</p>
+                    <p>Unsere Internetseite nutzt Formspree, einen Webdienst der Webseite https://formspree.io (nachfolgend "Formspree"). Um Ihnen die Funktionalität des Kontaktformulars zur Verfügung zu stellen, senden wir Ihre E-Mail-Adresse, Ihren Vornamen und Nachnamen an Formspree. Diese Daten werden dort verarbeitet, gespeichert und an Matthias Teifl per Mail an tedra-official@web.de weitergegeben. Außerdem werden von Formspree unter anderem weitere Daten wie Ihre IP-Adresse, Ihr Typ des Browsers, die Domain der Webseite, das Datum und die Zeit des Zugriffs erhoben, um die gewünschte Funktionalität des Kontaktformulars bereitzustellen. Eine detaillierte Übersicht der erhobenen Daten finden Sie <a href="https://formspree.io/legal/privacy-policy" target="_blank">hier</a>. Rechtsgrundlage für die Nutzung von Formspree ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO (berechtigtes Interesse). In dem vorliegenden Fall werden personenbezogene Daten in die USA übertragen werden: Die Verarbeitung, Weitergabe und Speicherung der Daten ist von Formspree in dem folgenden Dokument zusammengefasst: <a href="https://formspree.io/legal/privacy-policy">Hier</a>.</p>
                 </div>
             </div>
         </div>
@@ -148,7 +155,7 @@
         </div>
     </div>
 
-    <img src="img/smiley.svg" id="smiley" style="display:none;"/>
+    <img src="~img/smiley.svg" id="smiley" style="display:none;" inline/>
 
     <svg style="display:none;">
         <symbol id="polygon" viewBox="0 0 800 692.82032">
