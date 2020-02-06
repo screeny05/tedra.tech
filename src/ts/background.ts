@@ -87,10 +87,10 @@ window.addEventListener('load', () => {
 
     const setLoadedClass = (): void => {
         const paintDelta = Date.now() - startTime;
-        if(paintDelta > REVEAL_TIMEOUT){
+        if(paintDelta < REVEAL_TIMEOUT){
             setTimeout(() => {
                 $canvas.classList.add('background--is-painted');
-            }, paintDelta)
+            }, REVEAL_TIMEOUT - paintDelta)
         } else {
             $canvas.classList.add('background--is-painted');
         }
