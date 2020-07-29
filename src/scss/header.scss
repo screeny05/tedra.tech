@@ -1,3 +1,5 @@
+$header-collapse-width: 700px;
+
 .header {
     position: fixed;
     left: 0;
@@ -28,7 +30,7 @@
         display: block;
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: $header-collapse-width) {
         display: block;
         left: auto;
         right: 30px;
@@ -50,18 +52,32 @@
 }
 
 .header__social-icon {
-    width: 24px;
-    height: 24px;
+    --social-icon-size: 24px;
+    width: var(--social-icon-size);
+    height: var(--social-icon-size);
     vertical-align: middle;
     color: rgba(255, 255,  255, 0.8);
     filter: drop-shadow(0px 0px 5px #000);
+}
+
+.header__social-icon--spotify {
+    --social-icon-size: 28px;
+}
+
+.header__social-icon--instagram,
+.header__social-icon--facebook {
+    --social-icon-size: 23px;
+}
+
+.header__social-icon--soundcloud {
+    --social-icon-size: 27px;
 }
 
 .header__hamburger {
     position: fixed;
     z-index: $z-index-offcanvas-menu;
 
-    @media (min-width: 600px) {
+    @media (min-width: $header-collapse-width) {
         display: none;
     }
 }
