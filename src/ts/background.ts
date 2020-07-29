@@ -32,11 +32,11 @@ window.addEventListener('load', () => {
 
     const setCanvasSize = () => {
         const dpr = window.devicePixelRatio || 1;
-        $canvas.width = window.innerWidth * dpr;
+        $canvas.width = document.body.clientWidth * dpr;
         $canvas.height = (window.innerHeight + canvasHeightAdd) * dpr;
-        $canvas.style.width = window.innerWidth + 'px';
+        $canvas.style.width = document.body.clientWidth + 'px';
         $canvas.style.height = (window.innerHeight + canvasHeightAdd) + 'px';
-        canvasWidthFull = window.innerWidth + entitySize;
+        canvasWidthFull = document.body.clientWidth + entitySize;
         canvasHeightFull = (window.innerHeight + canvasHeightAdd) + entitySize;
         ctx.scale(dpr, dpr);
     };

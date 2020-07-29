@@ -1,0 +1,7 @@
+.email-guard::before {
+    content: attr(data-mail);
+}
+
+.email-guard::after {
+    content: attr(data-domain);
+}

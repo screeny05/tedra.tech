@@ -6,6 +6,9 @@ window.addEventListener('load', () => {
     const $tetragon = document.querySelector('.tetragon') as HTMLDivElement;
     const $soundcloudIframe = document.querySelector('.js-soundcloud-iframe') as HTMLIFrameElement|null;
 
+    // Lazy load iframe
+    $soundcloudIframe.src = $soundcloudIframe.dataset['src'];
+
     const clamp = (val: number, min: number, max: number) => Math.max(Math.min(val, max), min);
 
     const toggleTetraDown = (addClass = true) => $tetragon.classList[addClass ? 'add' : 'remove']('tetragon--down');
