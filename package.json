@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/screeny05/tedra.tech#readme",
   "devDependencies": {
-    "parcel": "^1.12.3",
-    "sass": "^1.22.2",
-    "typescript": "^3.5.2"
+    "parcel": "^1.12.4",
+    "sass": "^1.26.10",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "throttle-debounce": "^2.1.0"
+    "throttle-debounce": "^2.2.1"
   }
 }
