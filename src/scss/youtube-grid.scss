@@ -1,0 +1,22 @@
+.youtube-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.youtube-grid__item {
+    background: #0a0b0e;
+    @include aspect-ratio(16, 9);
+
+    > iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.youtube-grid__item:first-child {
+    @media (min-width: 768px) {
+        grid-column: 1 / 3;
+    }
+}
