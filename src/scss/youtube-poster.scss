@@ -22,11 +22,15 @@
     white-space: nowrap;
     overflow: hidden;
     font-family: 'Lato';
-    font-size: 42px;
+    font-size: 22px;
     text-shadow: 0 0 0.3em #000000de;
 
-    .youtube-poster--small & {
-        font-size: 22px;
+    @media (min-width: 768px) {
+        font-size: 42px;
+
+        .youtube-poster--small & {
+            font-size: 22px;
+        }
     }
 }
 
@@ -36,6 +40,10 @@
     left: 50%;
     width: 65px;
     transform: translate(-50%, -50%);
-    color: #e7f7f5;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+    transition: color .2s ease;
+    color: #1d1d1db3;
+
+    .youtube-poster:hover & {
+        color: #1d1d1d;
+    }
 }

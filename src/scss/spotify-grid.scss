@@ -1,12 +1,29 @@
 .spotify-grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
 }
 
 .spotify-grid__link {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.spotify-grid__item {
+    height: 80px;
+
+    @media (min-width: 768px) {
+        @include aspect-ratio(300, 380);
+        height: auto;
+    }
+
+    > iframe {
+        width: 100%;
+        height: 100%;
+    }
 }
