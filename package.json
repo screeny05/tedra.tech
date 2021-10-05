@@ -4,8 +4,8 @@
   "description": "https://www.tedra.tech/",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build src/index.html -o dist/index.html",
-    "dev": "parcel serve src/index.html"
+    "build": "parcel build src/index.html -o dist/index.html --public-url https://tedra.tech/",
+    "dev": "parcel serve src/index.html --public-url https://tedra.tech/"
   },
   "repository": {
     "type": "git",

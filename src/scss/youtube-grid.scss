@@ -18,6 +18,16 @@
     }
 }
 
+.youtube-grid__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+        grid-column: 1 / 3;
+    }
+}
+
 .youtube-grid__item:first-child {
     @media (min-width: 768px) {
         grid-column: 1 / 2;
