@@ -6,6 +6,10 @@
     flex-direction: column;
 }
 
+.section--collapsed {
+    min-height: 0;
+}
+
 .section__inner {
     background: #12151a;
     min-height: 100%;
