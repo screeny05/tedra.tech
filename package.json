@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html -o dist/index.html --public-url https://tedra.tech/",
-    "dev": "parcel serve src/index.html --public-url https://tedra.tech/"
+    "dev": "parcel serve src/index.html"
   },
   "repository": {
     "type": "git",

@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 20px 10px;
 
     @media (min-width: 768px) {
         grid-column-end: 3;
@@ -24,6 +25,10 @@
     @media (min-width: 768px) {
         @include aspect-ratio(300, 380);
         height: auto;
+
+        &:last-of-type {
+            grid-column-start: 2;
+        }
     }
 
     > iframe {
