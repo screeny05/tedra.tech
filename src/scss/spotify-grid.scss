@@ -3,7 +3,7 @@
     grid-gap: 20px;
 
     @media (min-width: 768px) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto auto;
     }
 }
@@ -23,8 +23,7 @@
     height: 80px;
 
     @media (min-width: 768px) {
-        @include aspect-ratio(300, 380);
-        height: auto;
+        height: 232px;
 
         &:last-of-type {
             grid-column-start: 2;
