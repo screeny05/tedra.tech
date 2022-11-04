@@ -25,9 +25,9 @@
     @media (min-width: 768px) {
         height: 232px;
 
-        &:last-of-type {
-            grid-column-start: 2;
-        }
+        /*&:last-of-type {
+            grid-column-start: 3;
+        }*/
     }
 
     > iframe {

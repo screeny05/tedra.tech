@@ -1,13 +1,13 @@
 const onPosterClick = (e: MouseEvent) => {
-    const $el = <HTMLElement>e.currentTarget;
-    const { embedUrl } = $el.dataset;
+  const $el = <HTMLElement>e.currentTarget;
+  const { embedUrl } = $el.dataset;
 
-    if(!embedUrl){
-        return;
-    }
+  if (!embedUrl) {
+    return;
+  }
 
-    e.preventDefault();
-    $el.outerHTML = `
+  e.preventDefault();
+  $el.outerHTML = `
         <iframe
             src="${embedUrl}"
             frameborder="0"
@@ -19,6 +19,11 @@ const onPosterClick = (e: MouseEvent) => {
     `;
 };
 
-Array.from(document.querySelectorAll('.js-iframe-poster')).forEach(el => {
-    el.addEventListener('click', onPosterClick);
+document.addEventListener("DOMContentLoaded", () => {
+  Array.from(document.querySelectorAll(".js-iframe-poster")).forEach((el) => {
+    if (!(el instanceof HTMLElement)) {
+      return;
+    }
+    el.addEventListener("click", onPosterClick);
+  });
 });
