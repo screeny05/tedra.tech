@@ -1,0 +1,32 @@
+.product-bundle__selected-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-bundle__selected-item {
+  appearance: none;
+  background: none;
+  padding: 0;
+  border: 1px dashed #bbb;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.bundle-item__image {
+  user-select: none;
+  aspect-ratio: 1;
+}
+
+.product-bundle__available-items {
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-bundle__available-item {
+  appearance: none;
+  background: #bbb;
+  border: none;
+  padding: 0;
+}

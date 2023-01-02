@@ -1,47 +1,64 @@
 .input-field {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
-input[type="text"],
-input[type="email"] {
-    background: none;
-    border: none;
+input[type='text'],
+input[type='email'] {
+  background: none;
+  border: none;
+  color: #fff;
+  border: 1px solid;
+  line-height: 50px;
+  padding: 0 15px;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: #fff;
+    box-shadow: 0 0 0px 1000px #12151a inset;
+    border-color: #fff;
     color: #fff;
-    border: 1px solid;
-    line-height: 50px;
-    padding: 0 15px;
-    width: 100%;
+  }
 
-    &:focus {
-        outline: none;
-        border-color: $color-primary;
-    }
-
-    &:-webkit-autofill {
-        -webkit-text-fill-color: #fff;
-        box-shadow: 0 0 0px 1000px #12151a inset;
-        border-color: #fff;
-        color: #fff;
-    }
-
-    &:-webkit-autofill:focus {
-        border-color: $color-primary;
-    }
+  &:-webkit-autofill:focus {
+    border-color: $color-primary;
+  }
 }
 
 textarea {
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 8em;
-    background: none;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 15px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 8em;
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 15px;
 
-    &:focus {
-        outline: none;
-        border-color: $color-primary;
-    }
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+select {
+  appearance: none;
+  border: 1px solid $color-primary;
+  color: #fff;
+  background: none;
+  line-height: 52px;
+  padding: 0 32px 0 15px;
+  background-image: url("data:image/svg+xml,%3Csvg height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='m7.554 8.763 4.459 4.237 4.458-4.237a.835.835 0 0 1 .625-.263.92.92 0 0 1 .65.263c.17.176.254.39.254.645a.985.985 0 0 1 -.255.67l-5.095 5.159a.92.92 0 0 1 -.65.263.835.835 0 0 1 -.624-.263l-5.096-5.158a.936.936 0 0 1 -.28-.671.85.85 0 0 1 .28-.645.835.835 0 0 1 .624-.263.92.92 0 0 1 .65.263z' fill='%23fff' fill-rule='nonzero'/%3E%3Cpath d='m0 0h24v24h-24z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+}
+
+.select--small {
+  line-height: 32px;
+  min-width: 80px;
 }
