@@ -1,21 +1,30 @@
 html {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
-    background: #0a0b0e;
-    color: #ECEFF4;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #0a0b0e;
+  color: #eceff4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 a {
-    color: #fff;
-    text-decoration: underline;
-    text-underline-offset: 4px;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-primary;
+  }
 }
 
 p {
-    line-height: 1.5;
+  line-height: 1.5;
+}
+
+.is-hidden {
+  display: none !important;
 }

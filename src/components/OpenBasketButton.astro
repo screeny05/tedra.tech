@@ -1,0 +1,12 @@
+---
+---
+
+<a href="/basket" class="open-basket-button button is-hidden js--open-basket-link">Open Basket</a>
+
+<script>
+  import { getItemsFromStorage } from '../hooks/basket';
+  let items = getItemsFromStorage();
+  if (items.length !== 0) {
+    document.querySelector('.js--open-basket-link')!.classList.remove('is-hidden');
+  }
+</script>

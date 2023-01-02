@@ -1,13 +1,27 @@
 .button {
-    border: 1px solid $color-primary;
-    background: none;
-    color: #fff;
-    line-height: 52px;
-    padding: 0 15px;
-    width: 100%;
-    cursor: pointer;
+  border: 1px solid $color-primary;
+  background: none;
+  color: #fff;
+  line-height: 52px;
+  padding: 0 15px;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: block;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled,
+  &.button--disabled {
+    opacity: 0.5;
+    border-color: #fff;
+    cursor: auto;
+  }
+}
+
+.button--small {
+  line-height: 36px;
 }

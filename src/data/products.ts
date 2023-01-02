@@ -1,0 +1,57 @@
+import type { Product, ProductBundleItem } from '../models/product';
+
+export const availableBundleItems: ProductBundleItem[] = [
+  { image: '/img/cover/000_tedraeder.png', title: 'Tedraeder', sku: '000_tedraeder' },
+  { image: '/img/cover/001_the-clock.png', title: 'The Clock', sku: '001_the-clock' },
+  { image: '/img/cover/002_the-explorer.png', title: 'The Explorer', sku: '002_the-explorer' },
+  { image: '/img/cover/003_anchormine.png', title: 'Anchormine', sku: '003_anchormine' },
+  { image: '/img/cover/004_lunar.png', title: 'Lunar', sku: '004_lunar' },
+  { image: '/img/cover/005_the-engine.png', title: 'The Engine', sku: '005_the-engine' },
+  { image: '/img/cover/006_the-collision.png', title: 'The Collision', sku: '006_the-collision' },
+  { image: '/img/cover/007_supernova.png', title: 'Supernova', sku: '007_supernova' },
+  { image: '/img/cover/008_timeshift.png', title: 'Timeshift', sku: '008_timeshift' },
+  { image: '/img/cover/009_devastation.png', title: 'Devastation', sku: '009_devastation' },
+  { image: '/img/cover/010_fgmxg.png', title: 'Fg=mxg', sku: '010_fgmxg' },
+  { image: '/img/cover/011_magnetar.png', title: 'Magnetar', sku: '011_magnetar' },
+];
+
+export const products: Product[] = [
+  {
+    slug: 'tedra-coaster-set',
+    title: 'TEDRA Coaster Set, 6 items',
+    subtitle: 'Handmade, 85x85mm',
+    sku: 'ta002',
+    price: 2399,
+    tax: 455,
+    description: 'Stylish coasters made of aluminum, anodized black.\nEach coaster features a different, laser engraved cover art of the tracks released by TEDRA so far.',
+    isBundle: true,
+    bundleSlots: 6,
+    bundleItems: availableBundleItems,
+    images: ['/img/shop/ta001_back.jpg', '/img/shop/ta001_front.jpg'],
+    maxQuantity: 2,
+  },
+  {
+    slug: 'tedra-dog-tag',
+    title: 'TEDRA Dog Tag',
+    subtitle: 'Handmade, aluminium',
+    sku: 'ta001',
+    price: 1499,
+    tax: 285,
+    description: 'Dog Tag necklace made of aluminum, black anodized.\nWith silicone silencer.\nFront: laser engraved tetrahedron, Back: laser engraved tedra logo.',
+    isBundle: false,
+    images: ['/img/shop/ta001_front.jpg', '/img/shop/ta001_back.jpg'],
+    maxQuantity: 10,
+  },
+  {
+    slug: 'tedra-gym-bag',
+    title: 'TEDRA Gym Bag',
+    subtitle: 'Black, 100% organic cotton',
+    sku: 'ta003',
+    price: 1999,
+    tax: 380,
+    description: 'Stylish and never out of fashion gym bag, made from 100% organic cotton.\nFront: printed with tetrahedron and tedra logo\nColor: black',
+    isBundle: false,
+    images: ['/img/shop/ta001_front.jpg', '/img/shop/ta001_back.jpg'],
+    maxQuantity: 2,
+  },
+];
