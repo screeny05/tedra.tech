@@ -11,6 +11,14 @@ export function AddToCart({ product }: any) {
   const isAddToCartEnabled = hasBundleSelection;
   const [, { add: addToBasket }] = useBasket();
 
+  const triggerBundlePickerHighlight = () => {
+    const triggerClass = 'product-detail--highlight-bundle-picker';
+    window.document.documentElement.classList.add(triggerClass);
+    setTimeout(() => {
+      window.document.documentElement.classList.remove(triggerClass);
+    }, 500);
+  };
+
   return (
     <>
       {product.isBundle ? (
@@ -32,13 +40,17 @@ export function AddToCart({ product }: any) {
         <button
           class={'product-detail__add-to-cart button ' + (isAddToCartEnabled ? '' : 'button--disabled')}
           onClick={() => {
+            if (!isAddToCartEnabled && !hasBundleSelection) {
+              triggerBundlePickerHighlight();
+              return;
+            }
+
             if (!isAddToCartEnabled) {
               return;
             }
             Toastify({
               text: `${quantity}x ${product.title} added <div class="toastify__link">to the basket</div>.`,
               gravity: 'bottom',
-              duration: -1,
               destination: '/basket',
               escapeMarkup: false,
             }).showToast();

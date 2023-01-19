@@ -1,3 +1,30 @@
+.product-bundle {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.product-bundle::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  pointer-events: none;
+  box-shadow: 0 0 2px 4px rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-detail--highlight-bundle-picker .product-bundle {
+  animation: pulse;
+  animation-duration: 500ms;
+  animation-play-state: running;
+}
+
+.product-bundle__help {
+  margin-bottom: 10px;
+  opacity: 0.8;
+  font-size: 13px;
+}
+
 .product-bundle__selected-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -1,7 +1,9 @@
 import { SHIPPING_COSTS, useBasket } from '../hooks/basket';
 import type { BasketItem } from '../models/basket';
 import { formatCurrency } from '../utils/format-currency';
-import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import Toastify from 'toastify-js';
+import { useState } from 'preact/hooks';
 
 function CartSummary({ className }: { className?: string }) {
   const [basket] = useBasket();
@@ -63,13 +65,13 @@ function CartLineItem({ item, onClickDelete, onChangeQuantity }: { item: BasketI
   );
 }
 
-function CheckoutButton() {
+function CheckoutButton({ onPaymentSuccess }: { onPaymentSuccess: (orderData: any) => void }) {
   const [basket] = useBasket();
 
   return (
     <PayPalButtons
       style={{ layout: 'vertical', color: 'black', label: 'buynow' }}
-      createOrder={async (data: any, actions: any) => {
+      createOrder={async (_: any, actions: any) => {
         const orderId = await actions.order.create({
           purchase_units: [
             {
@@ -103,9 +105,21 @@ function CheckoutButton() {
         });
         return orderId;
       }}
-      onApprove={async (data: any, actions: any) => {
+      onApprove={async (_: any, actions: any) => {
         const orderData = await actions.order.capture();
-        console.log('orderData', orderData);
+
+        if (orderData.status === 'COMPLETED') {
+          onPaymentSuccess(orderData);
+          return;
+        }
+
+        Toastify({
+          text: `PayPal Error occurred: ${orderData.status}`,
+          gravity: 'bottom',
+          duration: -1,
+          destination: '/basket',
+          escapeMarkup: false,
+        }).showToast();
       }}
     />
   );
@@ -113,12 +127,30 @@ function CheckoutButton() {
 
 export function CartContent() {
   const [basket, basketActions] = useBasket();
+  const [orderData, setOrderData] = useState<null | any>(null);
+
+  const handleOrderSuccess = (currentOrderData: any) => {
+    setOrderData(currentOrderData);
+    basketActions.clear();
+  };
+
+  if (orderData) {
+    return (
+      <div className="cart-content cart-content--empty">
+        <div>
+          <p>Purchase successful.</p>
+          <p>Thank you for supporting TEDRA!</p>
+          <p>You will receive an order-confirmation via mail, as soon as your order has been reviewed.</p>
+        </div>
+      </div>
+    );
+  }
 
   if (basket.items.length === 0) {
     return (
       <div className="cart-content cart-content--empty">
         <div>
-          <p>No items in the basket.</p>
+          <p>No items in the basket, yet.</p>
           <p>
             <a href="/#shop">Have a look at our items.</a>
           </p>
@@ -138,8 +170,7 @@ export function CartContent() {
         <div className="cart-content__sidebar">
           <div className="cart-content__sidebar-sticky">
             <CartSummary className="cart-content__summary" />
-            {/*<button className="cart-content__checkout button">Commit to Buy</button>*/}
-            <CheckoutButton />
+            <CheckoutButton onPaymentSuccess={handleOrderSuccess} />
           </div>
         </div>
       </div>

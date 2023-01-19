@@ -56,7 +56,7 @@ export function BundlePicker({ product, onSelectionDone }: { product: Product; o
 
   return (
     <div class="product-detail__bundle product-bundle">
-      <div class="product-bundle__title">Select exactly {product.bundleSlots} items to purchase in this set</div>
+      <div class="product-bundle__help">Select exactly {product.bundleSlots} items to purchase in this set:</div>
       <div class="product-bundle__selected-items">
         {selectionItems.map((selectionItem, i) => (
           <SelectedItem

@@ -7,6 +7,7 @@ interface BasketActions {
   add(toAdd: Product, quantity: number, bundleItems?: ProductBundleItem[]): void;
   remove(item: BasketItem): void;
   changeQuantity(item: BasketItem, quantity: number): void;
+  clear(): void;
 }
 
 const noop = (): any => {};
@@ -16,6 +17,7 @@ const noopBasket: [Basket, BasketActions] = [
     add: noop,
     remove: noop,
     changeQuantity: noop,
+    clear: noop,
   },
 ];
 
@@ -88,7 +90,7 @@ export function useBasket(): [Basket, BasketActions] {
   const add = (items: BasketItem[], toAdd: Product, quantity: number, bundleItems?: ProductBundleItem[]): BasketItem[] => {
     const existingItem = items.find((item) => item.product.sku === toAdd.sku && !toAdd.isBundle);
     if (existingItem) {
-      existingItem.quantity += Math.min(quantity, toAdd.maxQuantity ?? Infinity);
+      existingItem.quantity = Math.min(existingItem.quantity + quantity, toAdd.maxQuantity ?? Infinity);
       return [...items];
     }
     quantity = Math.min(quantity, toAdd.maxQuantity ?? Infinity);
@@ -110,12 +112,15 @@ export function useBasket(): [Basket, BasketActions] {
     return [...items];
   };
 
+  const clear = (): BasketItem[] => [];
+
   return [
     basket,
     {
       add: basketAction('add', add),
       remove: basketAction('remove', remove),
       changeQuantity: basketAction('changeQuantity', changeQuantity),
+      clear: basketAction('clear', clear),
     },
   ];
 }
