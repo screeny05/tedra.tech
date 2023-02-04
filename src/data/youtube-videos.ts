@@ -1,6 +1,6 @@
-import type { YoutubeSet } from '../models/youtube-set';
+import type { YoutubeVideo } from '../models/youtube-video';
 
-export const youtubeSets: YoutubeSet[] = [
+export const youtubeVideos: YoutubeVideo[] = [
   { id: 'BfNw2YlySdg', title: 'TEDRA | Live at Electronic Village 2022' },
   { id: 'LbqkT6YYmNQ', title: 'TEDRA | Live at UtzUtz Club Edition 2022' },
   { id: 'WBDk1pyaGfM', title: 'TEDRA | Live at UtzUtz2021' },

@@ -40,6 +40,14 @@
   cursor: pointer;
 }
 
+.product-bundle__selected-item-icon {
+  transition: transform 0.3s ease;
+}
+
+.product-bundle__selected-item:hover .product-bundle__selected-item-icon {
+  transform: scale(2);
+}
+
 .bundle-item__image {
   user-select: none;
   aspect-ratio: 1;

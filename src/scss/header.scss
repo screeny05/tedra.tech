@@ -74,10 +74,14 @@ $header-collapse-width: 700px;
   --social-icon-size: 27px;
 }
 
+.header__social-icon--basket {
+  --social-icon-size: 20px;
+}
+
 .header__social-badge {
   position: absolute;
-  left: 23px;
-  top: 26px;
+  left: 21px;
+  top: 27px;
 }
 
 .header__hamburger {

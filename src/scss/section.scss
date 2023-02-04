@@ -14,11 +14,14 @@
   min-height: 0;
 }
 
+.section--single-line .section__content {
+  padding: 0;
+}
+
 .section__inner {
   background: #12151a;
   min-height: 100%;
   flex: 1 0;
-  --overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -40,12 +43,13 @@
 }
 
 .section__content--wide {
-  max-width: 990px;
+  max-width: 1080px;
 }
 
-.section__title {
+.section__title,
+.section__subtitle {
   color: #eceff4;
-  margin: 0;
+  margin: 20px 0;
   padding: 20px 0 5px;
   font-family: 'Lato', sans-serif;
   font-weight: 200;
@@ -60,12 +64,14 @@
 }
 
 .section__subtitle {
-  color: #eceff4;
-  font-size: 40px;
   margin: 0;
-  padding: 0 15px;
+  font-size: 40px;
 }
 
 .section__text {
   text-align: justify;
+}
+
+.section__text--center {
+  text-align: center;
 }

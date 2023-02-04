@@ -1,4 +1,4 @@
-export interface YoutubeSet {
+export interface YoutubeVideo {
   id: string;
   title: string;
 }

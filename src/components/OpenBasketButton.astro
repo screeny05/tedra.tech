@@ -6,7 +6,9 @@
 <script>
   import { getItemsFromStorage } from '../hooks/basket';
   let items = getItemsFromStorage();
+  const $basketButton = document.querySelector('.js--open-basket-link')!;
   if (items.length !== 0) {
-    document.querySelector('.js--open-basket-link')!.classList.remove('is-hidden');
+    $basketButton.classList.remove('is-hidden');
+    $basketButton.textContent = `Open Basket (${items.length})`;
   }
 </script>

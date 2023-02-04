@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import { CartContent } from '../components/CartContent';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Tedra | Basket">
@@ -19,13 +20,15 @@ import { CartContent } from '../components/CartContent';
   <div class="section section--collapsed section--no-padding-top">
     <div class="section__inner">
       <div class="section__content">
-        <p>All products are made to order. Shipping to germany only. Orders can be expected to ship after 5 to 7 business days. An order-confirmation email will be sent, after your order has been reviewed.</p>
+        <p>All products are made to order. Shipping to Germany only. Orders can be expected to ship after 5 to 7 business days. An order-confirmation email will be sent, after your order has been manually reviewed.</p>
         <p>Shipping with DHL.</p>
         <p>Payment with PayPal.</p>
         <p>
-          <a href="#">Terms and conditions (PDF, German)</a> apply.
+          <a href="/conditions">Terms and conditions (German)</a> apply.
         </p>
       </div>
     </div>
   </div>
+
+  <Footer />
 </Layout>

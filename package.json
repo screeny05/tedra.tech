@@ -16,6 +16,7 @@
     "@paypal/react-paypal-js": "^7.8.2",
     "@types/toastify-js": "^1.11.1",
     "astro": "^1.8.0",
+    "astro-icon": "^0.8.0",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
     "framer-motion": "^8.0.2",

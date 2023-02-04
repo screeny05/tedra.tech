@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Tedra | Imprint">
+  <Header />
+
+  <div class="section section--collapsed">
+    <div class="section__inner">
+      <h1 class="section__title">Imprint.</h1>
+      <div class="section__content" lang="de-DE">
+        <h2>Angaben gemäß &sect; 5 TMG</h2>
+        <p>
+          Matthias Teifl<br />
+          Hinter den Gärten 7<br />
+          74357 Bönnigheim
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          Telefon: <span class="email-guard" data-mail="07143" data-domain="4079970"> </span><br />
+          E-Mail: <span class="email-guard" data-mail="tedra-official" data-domain="web.de">@</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

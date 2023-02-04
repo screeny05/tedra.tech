@@ -6,9 +6,13 @@ import { products } from '../../data/products';
 import type { Product } from '../../models/product';
 import { formatCurrency } from '../../utils/format-currency';
 import { nlToPTag } from '../../utils/nl-to-p-tag';
+import Footer from '../../components/Footer.astro';
 
 export function getStaticPaths() {
-  return [...products.map((product) => ({ params: { slug: product.slug }, props: { product } }))];
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
 }
 
 const product: Product = Astro.props.product;
@@ -55,6 +59,8 @@ const product: Product = Astro.props.product;
       </div>
     </div>
   </div>
+
+  <Footer />
 </Layout>
 
 <script>

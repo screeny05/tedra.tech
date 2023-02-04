@@ -1,0 +1,12 @@
+.footer {
+  font-size: 13px;
+}
+
+.footer__divider {
+  margin: 0 10px;
+  color: #61656f;
+
+  &::before {
+    content: '╳';
+  }
+}

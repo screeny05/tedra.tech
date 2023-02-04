@@ -23,7 +23,7 @@ export const products: Product[] = [
     sku: 'ta002',
     price: 2399,
     tax: 455,
-    description: 'Stylish coasters made of aluminum, anodized black.\nEach coaster features a different, laser engraved cover art of the tracks released by TEDRA so far.',
+    description: 'Stylish coasters made of aluminum, anodized black.\nEach coaster features a different, laser engraved cover art of the tracks released by TEDRA so far.\nThe aluminum material is durable and easy to clean, and the anodized black finish adds a touch of elegance to any setting. The unique cover art designs, laser engraved onto each coaster, showcase the creativity and musical talent of TEDRA.',
     isBundle: true,
     bundleSlots: 6,
     bundleItems: availableBundleItems,

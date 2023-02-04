@@ -8,7 +8,7 @@ function SelectedItem({ onClick, item }: any) {
       {item ? (
         <img src={item.image} alt={item.title} />
       ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12.021 12.021">
+        <svg class="product-bundle__selected-item-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12.021 12.021">
           <path d="m7.647 8.353-3.4-3.4-3.4 3.4a.5.5 0 0 1-.707-.706l3.4-3.4L.146.853A.5.5 0 0 1 .853.146l3.4 3.4 3.4-3.4a.5.5 0 0 1 .706.707l-3.4 3.4 3.4 3.4a.5.5 0 1 1-.706.706z" transform="rotate(45 3.004 7.255)" style="fill:#fff"></path>
         </svg>
       )}

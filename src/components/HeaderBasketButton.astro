@@ -1,13 +1,9 @@
 ---
+import { Sprite } from 'astro-icon';
 ---
 
 <a class="header__social is-hidden js--header-basket-link" href="/basket" title="Open Basket">
-  <svg class="header__social-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <g fill="none" fill-rule="evenodd">
-      <path fill="currentColor" fill-rule="nonzero" d="M4 7.947h16L18.492 21H5.622L4 7.947zm1.337 1.178l1.317 10.678h10.788l1.24-10.678H5.338zm2.844-.54l-1.164-.097c.076-1.043.242-1.97.496-2.78.255-.799.592-1.471 1.012-2.018.42-.548.923-.963 1.508-1.246C10.62 2.148 11.274 2 12 2c.713 0 1.35.142 1.91.425.56.27 1.046.672 1.46 1.207.414.534.754 1.206 1.021 2.017.268.811.465 1.751.592 2.82l-1.164.135c-.115-.94-.28-1.751-.497-2.433-.203-.683-.464-1.242-.783-1.68a3.206 3.206 0 0 0-1.107-.985A3.21 3.21 0 0 0 12 3.197c-.547 0-1.044.11-1.49.328A3.042 3.042 0 0 0 9.366 4.53c-.318.451-.579 1.011-.783 1.68-.19.67-.324 1.461-.4 2.375z"></path>
-      <path d="M0 0h24v24H0z"></path>
-    </g>
-  </svg>
+  <Sprite name="basket" class="header__social-icon header__social-icon--basket" />
   <div class="header__social-badge badge js--header-basket-count">0</div>
 </a>
 
