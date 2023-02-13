@@ -1,0 +1,21 @@
+---
+---
+
+<a class="header__hamburger hamburger js-menu-trigger">
+  <div class="hamburger__container">
+    <div class="hamburger__line"></div>
+    <div class="hamburger__line"></div>
+    <div class="hamburger__line"></div>
+  </div>
+</a>
+
+<script>
+  window.addEventListener('load', () => {
+    const $trigger = document.querySelector('.js-menu-trigger')!;
+
+    $trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.documentElement.classList.toggle('is--menu-active');
+    });
+  });
+</script>

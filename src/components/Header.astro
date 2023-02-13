@@ -1,6 +1,7 @@
 ---
 import { Sprite } from 'astro-icon';
 import HeaderBasketButton from './HeaderBasketButton.astro';
+import HeaderHamburger from './HeaderHamburger.astro';
 ---
 
 <a href="/" class="header">
@@ -20,13 +21,11 @@ import HeaderBasketButton from './HeaderBasketButton.astro';
   <a class="header__social" href="https://soundcloud.com/tedraofficial" target="_blank" rel="noopener" title="Tedra on SoundCloud">
     <Sprite name="soundcloud" class="header__social-icon header__social-icon--soundcloud" />
   </a>
+  <a class="header__social" href="https://www.beatport.com/artist/tedra/863465" target="_blank" rel="noopener" title="Tedra on Beatport">
+    <Sprite name="beatport" class="header__social-icon header__social-icon--beatport" />
+  </a>
 
   <HeaderBasketButton />
 </div>
-<a class="header__hamburger hamburger js-menu-trigger">
-  <div class="hamburger__container">
-    <div class="hamburger__line"></div>
-    <div class="hamburger__line"></div>
-    <div class="hamburger__line"></div>
-  </div>
-</a>
+
+<HeaderHamburger />

@@ -8,6 +8,7 @@ import { formatCurrency } from '../utils/format-currency';
 import OpenBasketButton from '../components/OpenBasketButton.astro';
 import Hero from '../components/Hero.astro';
 import { Sprite } from 'astro-icon';
+import YoutubePoster from '../components/YoutubePoster.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -41,17 +42,7 @@ import Footer from '../components/Footer.astro';
       <div class="section__title">Live.</div>
       <div class="section__content section__content--wide justify-center">
         <div class="youtube-grid">
-          {
-            youtubeVideos.map((youtubeVideo) => (
-              <div class="youtube-grid__item">
-                <a href={'https://www.youtube.com/watch?v=' + youtubeVideo.id} class="youtube-poster js-iframe-poster youtube-poster--small" data-embed-url={'https://www.youtube-nocookie.com/embed/' + youtubeVideo.id + '?autoplay=1'} target="_blank">
-                  <img class="youtube-poster__image" src={'https://i.ytimg.com/vi/' + youtubeVideo.id + '/hqdefault.jpg'} width="1920" height="1080" alt={youtubeVideo.title} loading="lazy" />
-                  <div class="youtube-poster__title">{youtubeVideo.title}</div>
-                  <Sprite name="youtube-play" class="youtube-poster__play-icon" />
-                </a>
-              </div>
-            ))
-          }
+          {youtubeVideos.map((youtubeVideo) => <YoutubePoster youtubeVideo={youtubeVideo} />)}
           <div class="youtube-grid__link">
             <a href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA" class="link" target="_blank">Listen to Tedra on YouTube</a>
           </div>

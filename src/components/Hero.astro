@@ -1,14 +1,7 @@
 ---
+import HeroBackground from './HeroBackground.astro';
+import Tetragon from './Tetragon.astro';
 ---
 
-<div class="background__solid"></div>
-<canvas class="background" id="bg" style="display:block;"></canvas>
-
-<div class="scene">
-  <div class="tetragon">
-    <svg class="tetragon__surface tetragon__surface--bottom"><use xlink:href="#polygon"></use></svg>
-    <svg class="tetragon__surface tetragon__surface--front"><use xlink:href="#polygon"></use></svg>
-    <svg class="tetragon__surface tetragon__surface--left"><use xlink:href="#polygon"></use></svg>
-    <svg class="tetragon__surface tetragon__surface--right"><use xlink:href="#polygon"></use></svg>
-  </div>
-</div>
+<HeroBackground />
+<Tetragon />

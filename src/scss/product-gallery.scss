@@ -1,5 +1,13 @@
 .product-gallery {
-    display: grid;
-    grid-template: auto / repeat(3, 1fr);
-    gap: 20px 40px;
+  display: grid;
+  grid-template: auto / 1fr;
+  gap: 40px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

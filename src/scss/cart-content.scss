@@ -4,6 +4,10 @@
   gap: 60px;
 }
 
+.cart-content__order-data {
+  font-size: 15px;
+}
+
 .cart-item {
   display: grid;
   grid-template: auto auto / 100px 1fr auto;
