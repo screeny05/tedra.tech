@@ -1,5 +1,4 @@
 ---
-import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import { products } from '../data/products';
 import { spotifyTracks } from '../data/spotify-tracks';
@@ -9,12 +8,9 @@ import OpenBasketButton from '../components/OpenBasketButton.astro';
 import Hero from '../components/Hero.astro';
 import { Sprite } from 'astro-icon';
 import YoutubePoster from '../components/YoutubePoster.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Tedra">
-  <Header />
-
   <Hero />
 
   <div class="section" id="spotify">
@@ -59,13 +55,7 @@ import Footer from '../components/Footer.astro';
           {
             products.map((product) => (
               <div class="product-tile">
-                <div class="product-tile__flags">
-                  {product.isBundle ? (
-                    <div class="flag" data-augmented-ui="">
-                      Set
-                    </div>
-                  ) : null}
-                </div>
+                <div class="product-tile__flags">{product.isBundle ? <div class="flag">Set</div> : null}</div>
                 <a href={'/p/' + product.slug} class="product-tile__image-link">
                   <img src={product.images[0]} alt={product.title} class="product-tile__image" loading="lazy" />
                 </a>
@@ -157,8 +147,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </div>
   </div>
-
-  <Footer />
 
   <img src="img/smiley.svg" id="smiley" style="display:none;" />
 

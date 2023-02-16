@@ -5,6 +5,8 @@ export interface Props {
 
 const { title, lang } = Astro.props
 import { Sprite } from 'astro-icon';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import 'toastify-js/src/toastify.css';
 import '../scss/index.scss';
 ---
@@ -52,7 +54,26 @@ import '../scss/index.scss';
     </script>
 
     <Sprite.Provider>
-      <slot/>
+      <Header/>
+      <main id="swup">
+        <slot/>
+      </main>
+      <Footer/>
     </Sprite.Provider>
+
+    <script>
+      import Swup from 'swup';
+      import SwupSlideTheme from '@swup/slide-theme';
+      import SwupHeadPlugin from '@swup/head-plugin';
+      import SwupScrollPlugin from '@swup/scroll-plugin';
+
+      const swup = new Swup({
+        plugins: [
+          new SwupSlideTheme(),
+          new SwupHeadPlugin(),
+          new SwupScrollPlugin({ animateScroll: false }),
+        ]
+      });
+    </script>
 </body>
 </html>

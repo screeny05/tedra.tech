@@ -1,12 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
 import { AddToCart } from '../../components/AddToCart';
 import { products } from '../../data/products';
 import type { Product } from '../../models/product';
 import { formatCurrency } from '../../utils/format-currency';
 import { nlToPTag } from '../../utils/nl-to-p-tag';
-import Footer from '../../components/Footer.astro';
 
 export function getStaticPaths() {
   return products.map((product) => ({
@@ -19,8 +17,6 @@ const product: Product = Astro.props.product;
 ---
 
 <Layout title={product.title}>
-  <Header />
-
   <div class="section section--collapsed">
     <div class="section__inner">
       <div class="section__content section__content--wide justify-center">
@@ -59,8 +55,6 @@ const product: Product = Astro.props.product;
       </div>
     </div>
   </div>
-
-  <Footer />
 </Layout>
 
 <script>
