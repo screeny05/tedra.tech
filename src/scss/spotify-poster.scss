@@ -24,7 +24,9 @@
 
 .spotify-poster__content {
   display: grid;
-  flex: 1 0 auto;
+  flex: 1 1 auto;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .spotify-poster__spotify-icon {
@@ -46,6 +48,7 @@
   width: 35px;
   height: 35px;
   margin-left: auto;
+  margin-top: auto;
 
   &:hover {
     transform: scale(1.05);
