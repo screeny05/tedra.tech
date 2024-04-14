@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { products } from '../data/products';
+import { spotifyTracks } from '../data/spotify-tracks';
+import { youtubeVideos } from '../data/youtube-videos';
+import { formatCurrency } from '../utils/format-currency';
+import OpenBasketButton from '../components/OpenBasketButton.astro';
+import Hero from '../components/Hero.astro';
+import { Sprite } from 'astro-icon';
+import YoutubePoster from '../components/YoutubePoster.astro';
+import { isEnabled } from '../data/feature-flags';
+import SpotifyPoster from '../components/SpotifyPoster.astro';
+---
+
+<Layout title="Tedra">
+  <Hero />
+
+  <div class="section" id="spotify">
+    <div class="section__inner">
+      <h3 class="section__title">Tracks.</h3>
+      <div class="section__content section__content--wide justify-center">
+        <div class="spotify-grid">
+          {spotifyTracks.map((track) => <SpotifyPoster track={track} />)}
+        </div>
+        <div class="spotify-grid__link">
+          <a href="https://open.spotify.com/artist/32NGcZaWSqKmHby7x1qhXG" class="link">Listen to Tedra on Spotify</a>
+        </div>
+        <div class="spotify-popup">
+          <div class="js-spotify-popup"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="live">
+    <div class="section__inner">
+      <div class="section__title">Live.</div>
+      <div class="section__content section__content--wide justify-center">
+        <div class="youtube-grid">
+          {youtubeVideos.map((youtubeVideo) => <YoutubePoster youtubeVideo={youtubeVideo} />)}
+          <div class="youtube-grid__link">
+            <a href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA" class="link" target="_blank">Listen to Tedra on YouTube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {isEnabled('storefront') && (
+    <div class="section section--collapsed" id="shop">
+      <div class="section__inner">
+        <h3 class="section__title">Merch.</h3>
+        <div class="section__content section__content--wide">
+          <div class="product-gallery">
+            {
+              products.map((product) => (
+                <div class="product-tile">
+                  <div class="product-tile__flags">{product.isBundle ? <div class="flag">Set</div> : null}</div>
+                  <a href={'/p/' + product.slug} class="product-tile__image-link">
+                    <img src={product.images[0]} alt={product.title} class="product-tile__image" loading="lazy" />
+                  </a>
+                  <div class="product-tile__content">
+                    <div class="product-tile__title">{product.title}</div>
+                    <div class="product-tile__price">{formatCurrency(product.price)}</div>
+                    <a href={'/p/' + product.slug} class="product-tile__link button button--small">
+                      Details
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+          <OpenBasketButton />
+
+          <!-- <form method="POST" action="https://formspree.io/f/xeqwqjaw"></form> -->
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="section" id="contact">
+    <div class="section__inner">
+      <h3 class="section__title">Contact.</h3>
+      <div class="section__content">
+        <form method="POST" action="https://formspree.io/f/mwkarnyj">
+          <div class="form__field input-field">
+            <input type="text" name="name" placeholder="Name" required="required" />
+          </div>
+          <div class="form__field input-field">
+            <input type="email" name="email" placeholder="Email" required="required" />
+          </div>
+          <div class="form__field image-radio__list">
+            <label class="image-radio">
+              <input class="image-radio__input" type="radio" name="subject" value="Booking Request" required="required" />
+              <div class="image-radio__container">
+                <Sprite name="calendar" class="image-radio__image" />
+                <div class="image-radio__text">Booking<br />Request</div>
+              </div>
+            </label>
+            <label class="image-radio">
+              <input class="image-radio__input" type="radio" name="subject" value="Remix Request" required="required" />
+              <div class="image-radio__container">
+                <Sprite name="swap" class="image-radio__image" />
+                <div class="image-radio__text">Remix<br />Request</div>
+              </div>
+            </label>
+            <label class="image-radio">
+              <input class="image-radio__input" type="radio" name="subject" value="Promo" required="required" />
+              <div class="image-radio__container">
+                <Sprite name="heart" class="image-radio__image" />
+                <div class="image-radio__text">Promo</div>
+              </div>
+            </label>
+            <label class="image-radio">
+              <input class="image-radio__input" type="radio" name="subject" value="Other" required="required" checked="checked" />
+              <div class="image-radio__container">
+                <Sprite name="message" class="image-radio__image" />
+                <div class="image-radio__text">Other</div>
+              </div>
+            </label>
+          </div>
+          <div class="form__field">
+            <textarea name="content" rows="7" placeholder="Message"></textarea>
+          </div>
+          <div class="form__submit form__field">
+            <button type="submit" class="button">Send</button>
+          </div>
+
+          <a href="/privacy#formspree" class="link">Privacy Policy</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="section section--collapsed" id="about">
+    <div class="section__inner">
+      <h3 class="section__title">The Artist.</h3>
+      <div class="section__content">
+        <p class="section__text">TEDRA - Deep, driving, loud and hard.</p>
+        <p class="section__text">
+          Behind the synonym TEDRA is the German music producer Matthias Teifl. Since 2018 he convinces with a characteristic and varied sound in his productions as well as in his live sets, covering a wide range of styles from peak-time to melodic and progressive tracks. At the same time, he always remains unique in his musical style. Visit his <a href="https://open.spotify.com/artist/32NGcZaWSqKmHby7x1qhXG">Spotify artist-page</a> to discover all his productions.
+        </p>
+        <p class="section__text">Especially because of his tools and remix bootlegs which he produces only for his live sets and the audience. His live sound is characterized by epic melodies, driving rhythms and uncompromising basslines that keep his audience on their toes from start to finish, transporting them into a world of complete ecstasy.</p>
+        <p class="section__text">
+          Follow <a href="https://www.instagram.com/tedra.tech">Tedra on Instagram</a> to stay up to date on performances and new releases.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <img src="img/smiley.svg" id="smiley" style="display:none;" />
+
+  <svg style="display:none;">
+    <symbol id="polygon" viewBox="0 0 800 692.82032">
+      <polygon points="6,690.82032 794,690.82032 400,6" stroke-width="8"></polygon>
+    </symbol>
+  </svg>
+</Layout>

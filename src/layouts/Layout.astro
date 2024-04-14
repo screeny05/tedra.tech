@@ -1,0 +1,64 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title, lang } = Astro.props
+import { Sprite } from 'astro-icon';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import 'toastify-js/src/toastify.css';
+import '../scss/index.scss';
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>{title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#0a0b0e" />
+    <meta name="msapplication-TileColor" content="#0a0b0e" />
+    <meta name="description" content="TEDRA - Techno. 132 bpm straight, deep, loud and hard. Behind the name lurks the german music producer Matthias Teifl. Starting in 2018, his sound always covered a wider spectrum from peak-time techno to melodic and progressive tracks. Yet always staying unique in his musical style. Experiencing Tedra live is always about the thriving rhythm of techno beats. A must-see for every fan of electronic dance music who is looking for an energetic night out." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link type="preload" as="image" href="/img/smiley.svg" />
+    <link type="preload" as="font" href="/font/lato/latolatin-thin-webfont.woff2" crossorigin type="font/woff2" />
+</head>
+
+<body>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "sameAs": [
+                "https://open.spotify.com/artist/32NGcZaWSqKmHby7x1qhXG",
+                "https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA",
+                "https://www.facebook.com/Tedraofficial",
+                "https://www.instagram.com/tedra.tech",
+                "https://soundcloud.com/tedraofficial",
+                "https://www.beatport.com/artist/tedra/863465"
+            ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "logo": "favicon/apple-touch-icon.png"
+        }
+    </script>
+
+    <Sprite.Provider>
+      <Header/>
+      <main>
+        <slot/>
+      </main>
+      <Footer/>
+    </Sprite.Provider>
+</body>
+</html>

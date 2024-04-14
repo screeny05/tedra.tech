@@ -1,92 +1,103 @@
-$header-collapse-width: 700px;
+$header-collapse-width: 750px;
 
 .header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    padding: 20px 30px;
-    background: #0a0b0e;
-    z-index: $z-index-header;
+  position: fixed;
+  left: 0;
+  right: 0;
+  padding: 20px 30px;
+  background: #0a0b0e;
+  z-index: $z-index-header;
 }
 
 .header__logo {
-    max-width: 200px;
-    margin: 0 auto;
-    opacity: 0;
-    animation: 2s ease 0.2s 1 reveal-full forwards;
+  max-width: 200px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: 2s ease 0.2s 1 reveal-full forwards;
 }
 
 .header__socials {
-    position: fixed;
-    z-index: $z-index-offcanvas-menu;
-    top: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    display: none;
-    background: #0a0b0e;
+  position: fixed;
+  z-index: $z-index-offcanvas-menu;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+  background: #0a0b0e;
 
-    .is--menu-active & {
-        display: block;
-    }
+  .is--menu-active & {
+    display: block;
+  }
 
-    @media (min-width: $header-collapse-width) {
-        display: block;
-        left: auto;
-        right: 30px;
-        background: none;
-        opacity: 0;
-        animation: 0.7s ease 0.65s 1 reveal-full forwards;
-    }
+  @media (min-width: $header-collapse-width) {
+    display: block;
+    left: auto;
+    right: 30px;
+    background: none;
+    opacity: 0;
+    animation: 0.7s ease 0.65s 1 reveal-full forwards;
+  }
 }
 
 .header__social {
-    display: inline-block;
-    line-height: 87px;
-    padding: 0 7px;
-    text-decoration: none;
+  display: inline-block;
+  line-height: 87px;
+  padding: 0 7px;
+  text-decoration: none;
+  position: relative;
 
-    &:last-child {
-        margin-right: -7px;
-    }
+  &:last-child {
+    margin-right: -7px;
+  }
 }
 
 .header__social-icon {
-    --social-icon-size: 24px;
-    width: var(--social-icon-size);
-    height: var(--social-icon-size);
-    vertical-align: middle;
-    color: rgba(255, 255,  255, 0.8);
-    filter: drop-shadow(0px 0px 5px #000);
+  --social-icon-size: 24px;
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0px 0px 5px #000);
 }
 
 .header__social-icon--spotify {
-    --social-icon-size: 28px;
+  --social-icon-size: 28px;
 }
 
 .header__social-icon--instagram,
 .header__social-icon--facebook {
-    --social-icon-size: 23px;
+  --social-icon-size: 23px;
 }
 
 .header__social-icon--soundcloud {
-    --social-icon-size: 27px;
+  --social-icon-size: 27px;
+}
+
+.header__social-icon--basket {
+  --social-icon-size: 20px;
+}
+
+.header__social-badge {
+  position: absolute;
+  left: 21px;
+  top: 27px;
 }
 
 .header__hamburger {
-    position: fixed;
-    z-index: $z-index-offcanvas-menu;
+  position: fixed;
+  z-index: $z-index-offcanvas-menu;
 
-    @media (min-width: $header-collapse-width) {
-        display: none;
-    }
+  @media (min-width: $header-collapse-width) {
+    display: none;
+  }
 }
 
 @keyframes reveal-full {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

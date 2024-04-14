@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { AddToCart } from '../../components/AddToCart';
+import { products } from '../../data/products';
+import type { Product } from '../../models/product';
+import { formatCurrency } from '../../utils/format-currency';
+import { nlToPTag } from '../../utils/nl-to-p-tag';
+
+export function getStaticPaths() {
+  return products.map((product) => ({
+    params: { slug: product.slug },
+    props: { product },
+  }));
+}
+
+const product: Product = Astro.props.product;
+---
+
+<Layout title={product.title}>
+  <div class="section section--collapsed">
+    <div class="section__inner">
+      <div class="section__content section__content--wide justify-center">
+        <a href="/" class="modal__close-button close-button js--close-button">
+          <div class="close-button__text">close</div>
+          <div class="close-button__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="#fff" fill-rule="evenodd" d="M5.845 5.844c.293-.293.767-.293 1.06 0L12 10.938l5.095-5.094c.266-.266.683-.29.976-.072l.084.072c.293.293.293.768 0 1.06L13.061 12l5.094 5.095c.267.266.29.683.073.977l-.073.084c-.293.293-.767.293-1.06 0L12 13.06l-5.095 5.095c-.266.266-.683.29-.976.072l-.084-.072c-.293-.293-.293-.768 0-1.06L10.939 12 5.845 6.904c-.267-.266-.29-.683-.073-.977z"></path>
+            </svg>
+          </div>
+        </a>
+
+        <div class="product-detail">
+          <div class="product-detail__images image-gallery">
+            {
+              product.images.map((image) => (
+                <div class="image-gallery__item">
+                  <img src={image} class="image-gallery__image" alt={product.title + ' | product image'} />
+                </div>
+              ))
+            }
+          </div>
+          <div>
+            <div class="product-detail__content">
+              <div class="product-detail__header">
+                <div class="product-detail__title">{product.title}</div>
+                {product.subtitle ? <div class="product-detail__subtitle">{product.subtitle}</div> : null}
+                <div class="product-detail__price">{formatCurrency(product.price)}</div>
+              </div>
+              <div class="product-detail__description" set:html={nlToPTag(product.description)} />
+
+              <AddToCart product={product} client:load />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.querySelector('.js--close-button')!.addEventListener('click', (e) => {
+    e.preventDefault();
+    history.back();
+  });
+</script>

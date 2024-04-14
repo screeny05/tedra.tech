@@ -1,0 +1,3 @@
+- Page transition animations
+- Persistent bottom-bar spotify player?
+- Spotify performance improvements

@@ -1,0 +1,18 @@
+---
+import { Sprite } from 'astro-icon';
+---
+
+<a class="header__social is-hidden js--header-basket-link" href="/basket" title="Open Basket">
+  <Sprite name="basket" class="header__social-icon header__social-icon--basket" />
+  <div class="header__social-badge badge js--header-basket-count">0</div>
+</a>
+
+<script>
+  import { isEnabled } from '../data/feature-flags';
+  import { getItemsFromStorage } from '../hooks/basket';
+  let items = getItemsFromStorage();
+  if (items.length !== 0 && isEnabled('storefront')) {
+    document.querySelector('.js--header-basket-link')!.classList.remove('is-hidden');
+    document.querySelector('.js--header-basket-count')!.textContent = items.length.toString();
+  }
+</script>

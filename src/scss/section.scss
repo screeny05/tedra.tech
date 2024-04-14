@@ -1,67 +1,77 @@
 .section {
-    padding: 87px 30px 30px;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  padding: 87px 30px 30px;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.section--no-padding-top {
+  padding-top: 30px;
 }
 
 .section--collapsed {
-    min-height: 0;
+  min-height: 0;
+}
+
+.section--single-line .section__content {
+  padding: 0;
 }
 
 .section__inner {
-    background: #12151a;
-    min-height: 100%;
-    flex: 1 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  background: #12151a;
+  min-height: 100%;
+  flex: 1 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .section__content {
-    padding: 15px 15px 30px;
-    width: 100%;
-    max-width: 620px;
-    margin: 0 auto;
-    flex: 1 1 auto;
+  padding: 15px 15px 30px;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  flex: 1 1 auto;
 }
 
 .section__content--auto {
-    max-width: max-content;
+  max-width: max-content;
 }
 
 .section__content--full {
-    max-width: none;
+  max-width: none;
 }
 
 .section__content--wide {
-    max-width: 990px;
+  max-width: 1080px;
 }
 
-.section__title {
-    color: #ECEFF4;
-    margin: 0;
-    padding: 15px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 200;
-    font-size: 50px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    text-align: center;
+.section__title,
+.section__subtitle {
+  color: #eceff4;
+  margin: 20px 0;
+  padding: 20px 0 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 50px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
 
-    @media (min-width: 768px) {
-        font-size: 80px;
-    }
+  @media (min-width: 768px) {
+    font-size: 80px;
+  }
 }
 
 .section__subtitle {
-    color: #eceff4;
-    font-size: 40px;
-    margin: 0;
-    padding: 0 15px;
+  margin: 0;
+  font-size: 40px;
 }
 
 .section__text {
-    text-align: justify;
+  text-align: justify;
+}
+
+.section__text--center {
+  text-align: center;
 }

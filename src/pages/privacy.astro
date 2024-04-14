@@ -1,0 +1,86 @@
+---
+import { isEnabled } from '../data/feature-flags';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Tedra | Imprint">
+  <div class="section section--collapsed">
+    <div class="section__inner">
+      <h1 class="section__title">Privacy.</h1>
+      <div class="section__content" lang="de-DE">
+        <h2 id="kontaktdaten">Kontaktdaten des Verantwortlichen</h2>
+        <p class="section__text">Sollten Sie Fragen zum Datenschutz oder zur Verarbeitung personenbezogener Daten haben, finden Sie unter <a href="/imprint">Impressum</a> die Kontaktdaten der verantwortlichen Person</p>
+
+        <h2 id="formspree">Formspree Datenschutzerklärung</h2>
+        <p class="section__text">
+          Diese Internetseite nutzt Formspree, einen Webdienst der Webseite <a href="https://formspree.io">formspree.io</a> (nachfolgend "Formspree"). Um Ihnen die Funktionalität des Kontaktformulars zur Verfügung zu stellen, senden wir Ihre E-Mail-Adresse, Ihren Vornamen und Nachnamen an Formspree. Diese Daten werden dort verarbeitet, gespeichert und an Matthias Teifl per Mail an <span class="email-guard" data-mail="tedra-official" data-domain="web.de">@</span> weitergegeben. Außerdem werden von Formspree unter anderem weitere Daten wie Ihre IP-Adresse, Ihr Typ des Browsers, die Domain der Webseite, das Datum und die Zeit des Zugriffs erhoben, um die gewünschte Funktionalität des Kontaktformulars bereitzustellen. Eine detaillierte Übersicht der erhobenen Daten finden Sie <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">hier</a>. Rechtsgrundlage für die Nutzung von Formspree ist Art. 6 Abs. 1 S. 1 lit. f DS-GVO (berechtigtes Interesse). In dem vorliegenden Fall werden personenbezogene Daten in die USA übertragen werden: Die Verarbeitung, Weitergabe und Speicherung der Daten ist von Formspree in dem folgenden Dokument zusammengefasst: <a href="https://formspree.io/legal/privacy-policy">Hier</a>.
+        </p>
+
+        <h2 id="spotify">Spotify Datenschutzerklärung</h2>
+        <p class="section__text">
+          Wir verwenden auf unserer Website das Widget Spotify Music Player der Musikplattform Spotify. Dienstanbieter ist das schwedische Unternehmen Spotify AB, Regeringsgatan 19, 111 53 Stockholm, Schweden. Mehr über die Daten, die durch die Verwendung von Spotify verarbeitet werden, erfahren Sie in der Privacy Policy auf <a class="in-cell-link" href="https://www.spotify.com/at/legal/privacy-policy/" target="_blank" rel="noopener">https://www.spotify.com/at/legal/privacy-policy/.</a>
+        </p>
+
+        <h2 id="youtube">YouTube Datenschutzerklärung</h2>
+        <p class="section__text">Wir nutzen auf unserer Website das Videohosting-Portal YouTube. Dienstanbieter ist das amerikanische Unternehmen YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.</p>
+        <p class="section__text">YouTube verarbeitet Daten von Ihnen u.a. auch in den USA.</p>
+        <p class="section__text">Mehr über die Daten, die durch die Verwendung von YouTube verarbeitet werden, erfahren Sie in der Privacy Policy auf <a href="https://www.youtube.com/privacy">https://www.youtube.com/privacy</a>.</p>
+
+        <h2 id="netlify">Netlify Datenschutzerklärung</h2>
+        <p class="section__text">Wir verwenden für unsere Website den Webhosting-Anbieter Netlify. Dienstanbieter ist das amerikanische Unternehmen Netlify Inc., 2325 3rd Street, Suite 29, San Francisco, CA 94104, USA.</p>
+        <p class="section__text">Netlify verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.</p>
+        <p class="section__text">
+          Netlify hält einen Vertrag über die Auftragsverarbeitung gemäß Art. 28 DSGVO bereit, der als datenschutzrechtliche Grundlage für unsere Kundenbeziehung zu Netlify fungiert. Dieser verweist inhaltlich auf die EU-Standardvertragsklauseln. Sie finden ihn hier: <a href="https://www.netlify.com/pdf/netlify-dpa.pdf" target="_blank" rel="follow noopener">https://www.netlify.com/pdf/netlify-dpa.pdf</a>
+        </p>
+        <p class="section__text">
+          Mehr über die Daten, die durch die Verwendung von Netlify verarbeitet werden, erfahren Sie in der Privacy Policy auf <a href="https://www.netlify.com/privacy/?tid=312401131">https://www.netlify.com/privacy/</a>.
+        </p>
+
+        {
+          isEnabled('storefront') && (
+            <>
+              <h2 id="paypal">PayPal Datenschutzerklärung</h2>
+              <p class="section__text">Wir nutzen auf unserer Website den Online-Bezahldienst PayPal. Dienstanbieter ist das amerikanische Unternehmen PayPal Inc. Für den europäischen Raum ist das Unternehmen PayPal Europe (S.à r.l. et Cie, S.C.A., 22-24 Boulevard Royal, L-2449 Luxembourg) verantwortlich.</p>
+              <p class="section__text">PayPal verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.</p>
+              <p class="section__text">
+                Mehr Informationen zu den Standardvertragsklauseln und über die Daten, die durch die Verwendung von PayPal verarbeitet werden, erfahren Sie in der Datenschutzerklärung auf <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full?tid=312401131">https://www.paypal.com/webapps/mpp/ua/privacy-full</a>.
+              </p>
+
+              <h2>Onlineshop Datenschutzerklärung</h2>
+              <p class="section__text">Wir verarbeiten die Daten unserer Kunden, um ihnen die Auswahl, den Erwerb, bzw. die Bestellung der gewählten Produkte, Waren sowie verbundener Leistungen, als auch deren Bezahlung und Zustellung, bzw. Ausführung zu ermöglichen. Sofern für die Ausführung einer Bestellung erforderlich, setzen wir Dienstleister, insbesondere Post-, Speditions- und Versandunternehmen ein, um die Lieferung, bzw. Ausführung gegenüber unseren Kunden durchzuführen. Für die Abwicklung der Zahlungsvorgänge nehmen wir die Dienste von Banken und Zahlungsdienstleistern in Anspruch. Die erforderlichen Angaben sind als solche im Rahmen des Bestell- bzw. vergleichbaren Erwerbsvorgangs gekennzeichnet und umfassen die zur Auslieferung, bzw. Zurverfügungstellung und Abrechnung benötigten Angaben sowie Kontaktinformationen, um etwaige Rücksprache halten zu können; Rechtsgrundlagen: Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO).</p>
+
+              <h2 id="kundendaten">Kundendaten</h2>
+              <h3>Was sind Kundendaten?</h3>
+              <p class="section__text">Damit wir unseren Service bzw. unsere vertraglichen Leistungen anbieten können, verarbeiten wir auch Daten unserer Kunden und Geschäftspartner. Unter diesen Daten befinden sich immer auch personenbezogene Daten. Unter Kundendaten versteht man alle Informationen, die auf Basis einer vertraglichen oder vorvertraglichen Zusammenarbeit verarbeitet werden, um die angebotenen Leistungen erbringen zu können. Kundendaten sind also alle gesammelten Informationen, die wir über unsere Kunden erheben und verarbeiten.</p>
+              <h3>Welche Daten werden verarbeitet?</h3>
+              <p class="section__text">Welche Daten genau gespeichert werden, kann an dieser Stelle nur anhand Kategorien wiedergegeben werden. Dies hängt nämlich stets davon ab, welche Leistungen Sie von uns beziehen. In manchen Fällen geben Sie uns lediglich Ihre E-Mail-Adresse, damit wir beispielsweise mit Ihnen in Kontakt treten können oder wir Ihre Fragen beantworten können. In anderen Fällen erwerben Sie ein Produkt oder eine Dienstleistung bei uns und dafür benötigen wir deutlich mehr Informationen, wie etwa Ihre Kontaktdaten, Zahlungsdaten und Vertragsdaten.</p>
+              <p class="section__text">Hier eine Liste möglicher Daten, die wir von Ihnen erhalten und verarbeiten:</p>
+              <ul>
+                <li>Name</li>
+                <li>Kontaktadresse</li>
+                <li>E-Mail-Adresse</li>
+                <li>Telefonnummer</li>
+                <li>Vertragsdaten</li>
+              </ul>
+              <h3>Wie lange werden die Daten gespeichert?</h3>
+              <p class="section__text">Sobald wir die Kundendaten zur Erfüllung unserer vertraglichen Pflichten und unserer Zwecke nicht mehr benötigen und die Daten auch nicht für mögliche Gewährleistungs- und Haftungspflichten nötig sind, löschen wir die entsprechenden Kundendaten. Das ist zum Beispiel der Fall, wenn ein geschäftlicher Vertrag endet. Danach beträgt die Verjährungsfrist in der Regel 3 Jahre, wobei längere Fristen im Einzelfall möglich sind. Wir halten uns natürlich auch an die gesetzlichen Aufbewahrungspflichten. Ihre Kundendaten werden ganz sicher nicht an Dritte weitergegeben, wenn Sie dazu nicht explizit eine Einwilligung erteilt haben.</p>
+              <h3>Rechtsgrundlage</h3>
+              <p class="section__text">Rechtsgrundlagen für die Verarbeitung Ihrer Daten sind Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), Art. 6 Abs 1 lit. b DSGVO (Vertrag bzw. vorvertragliche Maßnahmen), Art. 6 Abs. 1 lit. f DSGVO (berechtigte Interessen)  und in speziellen Fällen (z. B. bei medizinischen Leistungen) Art. 9 Abs. 2 lit. a. DSGVO (Verarbeitung besonderer Kategorien).</p>
+              <p class="section__text">Für den Fall des Schutzes lebenswichtiger Interessen erfolgt die Datenverarbeitung gemäß Art. 9 Abs. 2 lit. c. DSGVO. Für Zwecke der Gesundheitsversorgung, der Arbeitsmedizin, für die medizinische Diagnostik, für die Versorgung oder Behandlung im Gesundheits- oder Sozialbereich oder für die Verwaltung von Systemen und Diensten im Gesundheits- oder Sozialbereich erfolgt die Verarbeitung personenbezogener Daten gemäß Art. 9 Abs. 2 lit. h. DSGVO. Wenn Sie freiwillig Daten der besonderen Kategorien mitteilen, erfolgt die Verarbeitung auf Grundlage von Art. 9 Abs. 2 lit. a. DSGVO.</p>
+            </>
+          )
+        }
+
+        <h2 id="baden-wuerttemberg-datenschutzbehoerde">Baden-Württemberg Datenschutzbehörde</h2>
+        <p>
+          <strong>Landesbeauftragter für Datenschutz:</strong> Dr. Stefan Brink<br />
+          <strong>Adresse:</strong> Königstraße 10a, 70173 Stuttgart<br />
+          <strong>Telefonnr.:</strong> 07 11/61 55 41-0<br />
+          <strong>E-Mail-Adresse:</strong> poststelle@lfdi.bwl.de<br />
+          <strong>Website:</strong>
+          <a href="https://www.baden-wuerttemberg.datenschutz.de/?tid=312401131" target="_blank" rel="noopener">https://www.baden-wuerttemberg.datenschutz.de/</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

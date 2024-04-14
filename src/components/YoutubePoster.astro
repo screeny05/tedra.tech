@@ -1,0 +1,42 @@
+---
+import { Sprite } from 'astro-icon';
+const { youtubeVideo } = Astro.props;
+---
+
+<div class="youtube-grid__item">
+  <a href={'https://www.youtube.com/watch?v=' + youtubeVideo.id} class="youtube-poster js-iframe-poster youtube-poster--small" data-embed-url={'https://www.youtube.com/embed/' + youtubeVideo.id + '?autoplay=1'} target="_blank">
+    <img class="youtube-poster__image" src={'https://i.ytimg.com/vi/' + youtubeVideo.id + '/hqdefault.jpg'} width="1920" height="1080" alt={youtubeVideo.title} loading="lazy" />
+    <div class="youtube-poster__title">{youtubeVideo.title}</div>
+    <Sprite name="youtube-play" class="youtube-poster__play-icon" />
+  </a>
+</div>
+
+<script>
+  const onPosterClick = (e: MouseEvent) => {
+    const $el = e.currentTarget as HTMLElement;
+    const { embedUrl } = $el.dataset;
+
+    if (e.metaKey || e.ctrlKey || !embedUrl) {
+      return;
+    }
+
+    e.preventDefault();
+    $el.outerHTML = `
+      <iframe
+        src="${embedUrl}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    `;
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    Array.from(document.querySelectorAll('.js-iframe-poster')).forEach((el) => {
+      if (!(el instanceof HTMLElement)) {
+        return;
+      }
+      el.addEventListener('click', onPosterClick);
+    });
+  });
+</script>

@@ -1,0 +1,28 @@
+---
+import { isEnabled } from '../data/feature-flags';
+---
+
+<div class="section section--collapsed section--no-padding-top section--single-line" id="footer">
+  <div class="section__inner">
+    <div class="section__content footer">
+      <p class="section__text section__text--center">
+        <a class="link" href="/imprint">Imprint</a>
+        <span class="footer__divider"></span>
+        <a class="link" href="/privacy">Privacy</a>
+        {
+          isEnabled('storefront') && (
+            <>
+              <span class="footer__divider" />
+              <a class="link" href="/conditions">
+                Conditions
+              </a>
+            </>
+          )
+        }
+      </p>
+      <p class="section__text section__text--center">
+        &copy; {new Date().getFullYear()} Tedra
+      </p>
+    </div>
+  </div>
+</div>

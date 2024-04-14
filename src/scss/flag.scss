@@ -1,0 +1,9 @@
+.flag {
+    --aug-border-all: 1px;
+    line-height: 22px;
+    padding: 0 9px;
+    text-transform: uppercase;
+    color: $color-primary;
+    background-color: #232831;
+    border: 1px solid currentColor;
+}
