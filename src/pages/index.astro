@@ -8,6 +8,8 @@ import OpenBasketButton from '../components/OpenBasketButton.astro';
 import Hero from '../components/Hero.astro';
 import { Sprite } from 'astro-icon';
 import YoutubePoster from '../components/YoutubePoster.astro';
+import { isEnabled } from '../data/feature-flags';
+import SpotifyPoster from '../components/SpotifyPoster.astro';
 ---
 
 <Layout title="Tedra">
@@ -18,16 +20,13 @@ import YoutubePoster from '../components/YoutubePoster.astro';
       <h3 class="section__title">Tracks.</h3>
       <div class="section__content section__content--wide justify-center">
         <div class="spotify-grid">
-          {
-            spotifyTracks.map((spotifyTrack) => (
-              <div class="spotify-grid__item">
-                <iframe src={`https://open.spotify.com/embed/track/${spotifyTrack.id}?theme=0`} title={`${spotifyTrack.title}. Listen on Spotify`} frameborder="0" allowtransparency="true" allow="encrypted-media" loading="lazy" />
-              </div>
-            ))
-          }
+          {spotifyTracks.map((track) => <SpotifyPoster track={track} />)}
         </div>
         <div class="spotify-grid__link">
           <a href="https://open.spotify.com/artist/32NGcZaWSqKmHby7x1qhXG" class="link">Listen to Tedra on Spotify</a>
+        </div>
+        <div class="spotify-popup">
+          <div class="js-spotify-popup"></div>
         </div>
       </div>
     </div>
@@ -47,36 +46,38 @@ import YoutubePoster from '../components/YoutubePoster.astro';
     </div>
   </div>
 
-  <div class="section section--collapsed" id="shop">
-    <div class="section__inner">
-      <h3 class="section__title">Merch.</h3>
-      <div class="section__content section__content--wide">
-        <div class="product-gallery">
-          {
-            products.map((product) => (
-              <div class="product-tile">
-                <div class="product-tile__flags">{product.isBundle ? <div class="flag">Set</div> : null}</div>
-                <a href={'/p/' + product.slug} class="product-tile__image-link">
-                  <img src={product.images[0]} alt={product.title} class="product-tile__image" loading="lazy" />
-                </a>
-                <div class="product-tile__content">
-                  <div class="product-tile__title">{product.title}</div>
-                  <div class="product-tile__price">{formatCurrency(product.price)}</div>
-                  <a href={'/p/' + product.slug} class="product-tile__link button button--small">
-                    Details
+  {isEnabled('storefront') && (
+    <div class="section section--collapsed" id="shop">
+      <div class="section__inner">
+        <h3 class="section__title">Merch.</h3>
+        <div class="section__content section__content--wide">
+          <div class="product-gallery">
+            {
+              products.map((product) => (
+                <div class="product-tile">
+                  <div class="product-tile__flags">{product.isBundle ? <div class="flag">Set</div> : null}</div>
+                  <a href={'/p/' + product.slug} class="product-tile__image-link">
+                    <img src={product.images[0]} alt={product.title} class="product-tile__image" loading="lazy" />
                   </a>
+                  <div class="product-tile__content">
+                    <div class="product-tile__title">{product.title}</div>
+                    <div class="product-tile__price">{formatCurrency(product.price)}</div>
+                    <a href={'/p/' + product.slug} class="product-tile__link button button--small">
+                      Details
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
+
+          <OpenBasketButton />
+
+          <!-- <form method="POST" action="https://formspree.io/f/xeqwqjaw"></form> -->
         </div>
-
-        <OpenBasketButton />
-
-        <!-- <form method="POST" action="https://formspree.io/f/xeqwqjaw"></form> -->
       </div>
     </div>
-  </div>
+  )}
 
   <div class="section" id="contact">
     <div class="section__inner">
@@ -126,7 +127,7 @@ import YoutubePoster from '../components/YoutubePoster.astro';
             <button type="submit" class="button">Send</button>
           </div>
 
-          <a href="/imprint" class="link">Privacy Policy</a>
+          <a href="/privacy#formspree" class="link">Privacy Policy</a>
         </form>
       </div>
     </div>

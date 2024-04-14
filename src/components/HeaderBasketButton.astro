@@ -8,9 +8,10 @@ import { Sprite } from 'astro-icon';
 </a>
 
 <script>
+  import { isEnabled } from '../data/feature-flags';
   import { getItemsFromStorage } from '../hooks/basket';
   let items = getItemsFromStorage();
-  if (items.length !== 0) {
+  if (items.length !== 0 && isEnabled('storefront')) {
     document.querySelector('.js--header-basket-link')!.classList.remove('is-hidden');
     document.querySelector('.js--header-basket-count')!.textContent = items.length.toString();
   }

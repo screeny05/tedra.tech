@@ -4,10 +4,11 @@
 <a href="/basket" class="open-basket-button button is-hidden js--open-basket-link">Open Basket</a>
 
 <script>
+  import { isEnabled } from '../data/feature-flags';
   import { getItemsFromStorage } from '../hooks/basket';
   let items = getItemsFromStorage();
-  const $basketButton = document.querySelector('.js--open-basket-link')!;
-  if (items.length !== 0) {
+  const $basketButton = document.querySelector('.js--open-basket-link');
+  if (items.length !== 0 && $basketButton) {
     $basketButton.classList.remove('is-hidden');
     $basketButton.textContent = `Open Basket (${items.length})`;
   }

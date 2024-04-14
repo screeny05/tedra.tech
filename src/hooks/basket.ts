@@ -2,6 +2,7 @@ import { useStore } from '@nanostores/preact';
 import { action, atom } from 'nanostores';
 import type { Basket, BasketItem } from '../models/basket';
 import type { Product, ProductBundleItem } from '../models/product';
+import { isEnabled } from '../data/feature-flags';
 
 interface BasketActions {
   add(toAdd: Product, quantity: number, bundleItems?: ProductBundleItem[]): void;
@@ -42,7 +43,7 @@ const setItemsToStorage = (items: readonly BasketItem[]): void => {
 };
 
 export const renderHeaderBasketButton = (items: readonly BasketItem[]): void => {
-  if (typeof window !== 'object') {
+  if (typeof window !== 'object' || !isEnabled('storefront')) {
     return;
   }
   const hasItems = items.length > 0;

@@ -13,10 +13,10 @@ const { youtubeVideo } = Astro.props;
 
 <script>
   const onPosterClick = (e: MouseEvent) => {
-    const $el = <HTMLElement>e.currentTarget;
+    const $el = e.currentTarget as HTMLElement;
     const { embedUrl } = $el.dataset;
 
-    if (!embedUrl) {
+    if (e.metaKey || e.ctrlKey || !embedUrl) {
       return;
     }
 

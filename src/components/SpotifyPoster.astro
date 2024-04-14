@@ -1,0 +1,78 @@
+---
+import { Sprite } from 'astro-icon';
+const { track } = Astro.props;
+---
+
+<a href={`https://open.spotify.com/track/${track.id}`} class="js-spotify-poster spotify-grid__item spotify-poster" data-spotify-id={track.id}>
+  <img class="spotify-poster__image" src={track.cover} alt={`${track.artist} on Spotify`} loading="lazy" />
+  <div class="spotify-poster__content">
+    <Sprite name="spotify-filled" class="spotify-poster__spotify-icon" />
+    <div class="spotify-poster__title">{track.title}</div>
+    <div class="spotify-poster__artist">{track.artist}</div>
+    <div class="spotify-poster__text">Listen on Spotify</div>
+    <Sprite name="spotify-play" class="spotify-poster__play-icon" />
+  </div>
+</a>
+
+<script>
+  const onPosterClick = async (e: MouseEvent) => {
+    const $el = e.currentTarget as HTMLElement;
+    const { spotifyId } = $el.dataset;
+
+    if (e.metaKey || e.ctrlKey || !spotifyId) {
+      return;
+    }
+
+    e.preventDefault();
+    const api = await initIframeApi();
+    if (controller) {
+      controller.loadUri(`spotify:track:${spotifyId}`);
+      controller.play();
+    } else {
+      api.createController(
+        document.querySelector('.js-spotify-popup'),
+        {
+          uri: `spotify:track:${spotifyId}`,
+          theme: 0,
+        },
+        (_controller: any) => {
+          controller = _controller;
+          controller.play();
+          console.log('Controller', controller);
+        }
+      );
+    }
+  };
+
+  let controller: any;
+  let iframeApi: any;
+  let awaitableIframeApi: Promise<any> | undefined;
+  const initIframeApi = async () => {
+    if (iframeApi) {
+      return iframeApi;
+    }
+    if (awaitableIframeApi) {
+      return awaitableIframeApi;
+    }
+    awaitableIframeApi = new Promise((resolve) => {
+      const $script = document.createElement('script');
+      $script.src = 'https://open.spotify.com/embed/iframe-api/v1';
+      document.body.appendChild($script);
+      (window as any).onSpotifyIframeApiReady = (_iframeApi: any) => {
+        iframeApi = _iframeApi;
+        console.log('Spotify iframe API is ready!', iframeApi);
+        resolve(iframeApi);
+      };
+    });
+    return awaitableIframeApi;
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    Array.from(document.querySelectorAll('.js-spotify-poster')).forEach((el) => {
+      if (!(el instanceof HTMLElement)) {
+        return;
+      }
+      el.addEventListener('click', onPosterClick);
+    });
+  });
+</script>

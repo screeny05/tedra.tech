@@ -1,0 +1,16 @@
+.spotify-popup {
+  position: fixed;
+  z-index: $z-index-spotify-popup;
+  margin: 0 auto;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: calc(100% - 30px);
+  width: 500px;
+  height: 80px;
+
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -2,6 +2,7 @@
 import { Sprite } from 'astro-icon';
 import HeaderBasketButton from './HeaderBasketButton.astro';
 import HeaderHamburger from './HeaderHamburger.astro';
+import { isEnabled } from '../data/feature-flags';
 ---
 
 <a href="/" class="header">
@@ -25,7 +26,7 @@ import HeaderHamburger from './HeaderHamburger.astro';
     <Sprite name="beatport" class="header__social-icon header__social-icon--beatport" />
   </a>
 
-  <HeaderBasketButton />
+  {isEnabled('storefront') && <HeaderBasketButton />}
 </div>
 
 <HeaderHamburger />
