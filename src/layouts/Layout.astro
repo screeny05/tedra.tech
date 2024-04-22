@@ -3,7 +3,7 @@ export interface Props {
 	title: string;
 }
 
-const { title, lang } = Astro.props
+const { title } = Astro.props
 import { Sprite } from 'astro-icon';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -26,7 +26,7 @@ import '../scss/index.scss';
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link type="preload" as="image" href="/img/smiley.svg" />
+    <link type="preload" as="image" href="/img/logo.svg" />
     <link type="preload" as="font" href="/font/lato/latolatin-thin-webfont.woff2" crossorigin type="font/woff2" />
 </head>
 

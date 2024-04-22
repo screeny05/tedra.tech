@@ -4,7 +4,7 @@ const { track } = Astro.props;
 ---
 
 <a href={`https://open.spotify.com/track/${track.id}`} class="js-spotify-poster spotify-grid__item spotify-poster" data-spotify-id={track.id}>
-  <img class="spotify-poster__image" src={track.cover} alt={`${track.artist} on Spotify`} loading="lazy" />
+  <img class="spotify-poster__image" src={track.cover} alt={`${track.artist} on Spotify`} loading="lazy" width="160" height="160" />
   <div class="spotify-poster__content">
     <Sprite name="spotify-filled" class="spotify-poster__spotify-icon" />
     <div class="spotify-poster__title">{track.title}</div>

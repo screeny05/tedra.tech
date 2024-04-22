@@ -1,30 +1,31 @@
 .background {
-    opacity: 0;
-    clip-path: inset(87px 30px 30px);
-    position: relative;
-    z-index: $z-index-scene;
-    height: 100vh;
+  opacity: 0;
+  clip-path: inset(87px 30px 30px);
+  position: relative;
+  z-index: $z-index-scene;
+  height: 100vh;
+  transition: opacity 0.3s ease;
 }
 
 .background--is-painted {
-    animation: 2s ease reveal-background forwards;
+  opacity: 0.4;
 }
 
 .background__solid {
-    position: absolute;
-    top: 67px;
-    left: 30px;
-    right: 30px;
-    height: calc(100vh - 67px - 10px);
-    background: linear-gradient(transparent 0, #0a0b0e 20px, #0a0b0e calc(100% - 20px), transparent 100%);
-    z-index: $z-index-scene;
+  position: absolute;
+  top: 67px;
+  left: 30px;
+  right: 30px;
+  height: calc(100vh - 67px - 10px);
+  background: linear-gradient(transparent 0, #0a0b0e 20px, #0a0b0e calc(100% - 20px), transparent 100%);
+  z-index: $z-index-scene;
 }
 
 @keyframes reveal-background {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0.4;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.4;
+  }
 }
