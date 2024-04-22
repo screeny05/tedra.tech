@@ -1,70 +1,70 @@
 $tetragon-size: 60vmin;
 
 .scene {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    perspective: 130vmin;
-    perspective-origin: 50% 43%;
-    overflow: hidden;
-    animation: 2s ease 0.2s reveal-full forwards;
-    opacity: 0;
-    will-change: opacity;
-    contain: paint;
-    z-index: $z-index-scene;
-    user-select: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  perspective: 130vmin;
+  perspective-origin: 50% 43%;
+  overflow: hidden;
+  animation: 2s ease 0.2s reveal-full forwards;
+  opacity: 0;
+  will-change: opacity;
+  contain: paint;
+  z-index: $z-index-scene;
+  user-select: none;
 }
 
 .tetragon {
-    transform-style: preserve-3d;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    width: $tetragon-size;
-    height: $tetragon-size;
-    transform-origin: 50% 100% $tetragon-size * -0.288235294;
-    transition: transform .1s linear;
-    will-change: transform;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: $tetragon-size;
+  height: $tetragon-size;
+  transform-origin: 50% 100% $tetragon-size * -0.288235294;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
 .is--tetragon-locked .tetragon,
 .is--menu-active .tetragon {
-    transform: none !important;
+  transform: none !important;
 }
 
 .tetragon--down {
-    transform: scale(.9, .9) !important;
+  transform: scale(0.9, 0.9) !important;
 }
 
 .tetragon__surface {
-    position: absolute;
-    top: 0;
-    left: 0;
-    stroke: #fff;
-    fill: none;
-    width: $tetragon-size;
-    height: $tetragon-size * 0.8660254;
-    transform-origin: 100% 100% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke: #fff;
+  fill: none;
+  width: $tetragon-size;
+  height: $tetragon-size * 0.8660254;
+  transform-origin: 100% 100% 0;
 }
 
 .tetragon__surface--bottom {
-    transform: rotateX(90deg) scale(1.001);
+  transform: rotateX(90deg) scale(1.001);
 }
 
 .tetragon__surface--front {
-    transform: rotateX(19.5deg);
+  transform: rotateX(19.5deg);
 }
 
 .tetragon__surface--left {
-    transform: rotateY(60deg) rotateX(-19.5deg);
-    transform-origin: 0 100% 0;
+  transform: rotateY(60deg) rotateX(-19.5deg);
+  transform-origin: 0 100% 0;
 }
 
 .tetragon__surface--right {
-    transform: rotateY(-60deg) rotateX(-19.5deg);
+  transform: rotateY(-60deg) rotateX(-19.5deg);
 }

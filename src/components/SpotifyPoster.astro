@@ -1,10 +1,12 @@
 ---
 import { Sprite } from 'astro-icon';
 const { track } = Astro.props;
+import { Image } from 'astro:assets';
+import imgFoo from '../assets/img/cover/000_tedraeder.png'
 ---
 
 <a href={`https://open.spotify.com/track/${track.id}`} class="js-spotify-poster spotify-grid__item spotify-poster" data-spotify-id={track.id}>
-  <img class="spotify-poster__image" src={track.cover} alt={`${track.artist} on Spotify`} loading="lazy" />
+  <Image class="spotify-poster__image" width="160" height="160" src={imgFoo} alt={`${track.artist} on Spotify`} loading="lazy" />
   <div class="spotify-poster__content">
     <Sprite name="spotify-filled" class="spotify-poster__spotify-icon" />
     <div class="spotify-poster__title">{track.title}</div>
