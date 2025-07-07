@@ -1,35 +1,39 @@
 .youtube-grid {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr 1fr;
-    }
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .youtube-grid__item {
-    background: #0a0b0e;
-    @include aspect-ratio(16, 9);
+  background: #0a0b0e;
+  @include aspect-ratio(16, 9);
 
-    > iframe {
-        width: 100%;
-        height: 100%;
-    }
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .youtube-grid__link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    @media (min-width: 1024px) {
-        grid-column: 1 / 3;
-    }
+  @media (min-width: 1024px) {
+    grid-column: 1 / 3;
+  }
 }
 
 .youtube-grid__item:first-child {
-    @media (min-width: 768px) {
-        grid-column: 1 / 2;
-    }
+  @media (min-width: 768px) {
+    grid-column: 1 / 2;
+  }
+}
+
+.youtube-grid__item:first-child {
+  grid-column: 1 / span 2;
 }

@@ -1,6 +1,7 @@
 import type { YoutubeVideo } from '../models/youtube-video';
 
 export const youtubeVideos: YoutubeVideo[] = [
+  { id: 'VipuxVEqLjw', title: 'TEDRA | Live at Blu Sky Festival' },
   { id: 'DCRJshHrbK8', title: 'TEDRA | Live at UtzUtz Series Closing' },
   { id: 'BfNw2YlySdg', title: 'TEDRA | Live at Electronic Village 2022' },
   { id: 'LbqkT6YYmNQ', title: 'TEDRA | Live at UtzUtz Club Edition 2022' },
