@@ -30,12 +30,13 @@ const { track } = Astro.props;
       controller.play();
     } else {
       api.createController(
-        document.querySelector('.js-spotify-popup'),
+        document.querySelector('.js-spotify-popup-target'),
         {
           uri: `spotify:track:${spotifyId}`,
           theme: 0,
         },
         (_controller: any) => {
+          document.querySelector('.js-spotify-popup').classList.add('spotify-popup--active');
           controller = _controller;
           controller.play();
           console.log('Controller', controller);
