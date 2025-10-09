@@ -11,8 +11,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.1);
-  filter: blur(5px);
   cursor: pointer;
 }
 
@@ -21,13 +19,14 @@
   top: 0;
   left: 0;
   right: 0;
-  padding: 20px 30px;
+  padding: 20px 30px 30px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-family: 'Lato', sans-serif;
   font-size: 22px;
   text-shadow: 0 0 0.3em #000000de;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 
   @media (min-width: 768px) {
     font-size: 42px;

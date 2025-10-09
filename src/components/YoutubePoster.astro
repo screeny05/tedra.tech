@@ -1,13 +1,18 @@
 ---
 import { Sprite } from 'astro-icon';
-const { youtubeVideo } = Astro.props;
+const { youtubeVideo, isBig } = Astro.props;
+
+const thumbnailFile = isBig ? 'maxresdefault.jpg' : 'hqdefault.jpg';
 ---
 
 <div class="youtube-grid__item">
   <a href={'https://www.youtube.com/watch?v=' + youtubeVideo.id} class="youtube-poster js-iframe-poster youtube-poster--small" data-embed-url={'https://www.youtube.com/embed/' + youtubeVideo.id + '?autoplay=1'} target="_blank">
-    <img class="youtube-poster__image" src={'https://i.ytimg.com/vi/' + youtubeVideo.id + '/hqdefault.jpg'} width="1920" height="1080" alt={youtubeVideo.title} loading="lazy" />
+    <img class="youtube-poster__image" src={'https://i.ytimg.com/vi/' + youtubeVideo.id + '/' + thumbnailFile} width="1920" height="1080" alt={youtubeVideo.title} loading="lazy" />
     <div class="youtube-poster__title">{youtubeVideo.title}</div>
     <Sprite name="youtube-play" class="youtube-poster__play-icon" />
+    <div class="youtube-poster__data-security-hint">
+      <!-- The video will be embedded only when clicking this thumbnail. By clicking, you agree to our <a href="/privacy" target="_blank">Privacy Policy</a>. -->
+    </div>
   </a>
 </div>
 
