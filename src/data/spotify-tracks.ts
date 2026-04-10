@@ -2,6 +2,18 @@ import type { SpotifyTrack } from '../models/spotify-track';
 
 export const spotifyTracks: SpotifyTrack[] = [
   {
+    id: '7umhMkIEdhvT1gmfHSBcPG',
+    title: 'Distant Call',
+    artist: 'TEDRA, Marane',
+    cover: '/img/cover/014_distant-call.avif',
+  },
+  {
+    id: '1KD0NI8aVdXRIWfWA0oyJj',
+    title: 'The Interval',
+    artist: 'TEDRA, Marane',
+    cover: '/img/cover/014_distant-call.avif',
+  },
+  {
     id: '4YFN5Cq9X7CMhMuIORDEnN',
     title: 'Lift Off',
     artist: 'TEDRA',

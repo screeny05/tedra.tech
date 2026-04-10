@@ -36,7 +36,7 @@ import SpotifyPoster from '../components/SpotifyPoster.astro';
     <div class="section__inner">
       <div class="section__title">Live.</div>
       <div class="section__content section__content--wide justify-center">
-        <div class="youtube-grid">
+        <div class={"youtube-grid " + (youtubeVideos.length % 2 === 0 ? 'youtube-grid--even' : 'youtube-grid--odd')}>
           {youtubeVideos.map((youtubeVideo, index) => <YoutubePoster youtubeVideo={youtubeVideo} isBig={index === 0}/>)}
           <div class="youtube-grid__link">
             <a href="https://www.youtube.com/channel/UC6e5__fIRVQisZ4HfQc43fA" class="link" target="_blank">Listen to Tedra on YouTube</a>
