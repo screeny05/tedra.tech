@@ -2,6 +2,12 @@ import type { SpotifyTrack } from '../models/spotify-track';
 
 export const spotifyTracks: SpotifyTrack[] = [
   {
+    id: '5L4pygiH57THzAgSLel3ig',
+    title: 'Unknown Galaxy',
+    artist: 'TEDRA',
+    cover: '/img/cover/015_unknown-galaxy.avif',
+  },
+  {
     id: '7umhMkIEdhvT1gmfHSBcPG',
     title: 'Distant Call',
     artist: 'TEDRA, Marane',
