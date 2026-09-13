@@ -3,10 +3,11 @@ import { Sprite } from 'astro-icon';
 const { youtubeVideo, isBig } = Astro.props;
 
 const thumbnailFile = isBig ? 'maxresdefault.jpg' : 'hqdefault.jpg';
+const posterClass = 'youtube-poster js-iframe-poster' + (isBig ? '' : ' youtube-poster--small');
 ---
 
 <div class="youtube-grid__item">
-  <a href={'https://www.youtube.com/watch?v=' + youtubeVideo.id} class="youtube-poster js-iframe-poster youtube-poster--small" data-embed-url={'https://www.youtube.com/embed/' + youtubeVideo.id + '?autoplay=1'} target="_blank">
+  <a href={'https://www.youtube.com/watch?v=' + youtubeVideo.id} class={posterClass} data-embed-url={'https://www.youtube.com/embed/' + youtubeVideo.id + '?autoplay=1'} target="_blank">
     <img class="youtube-poster__image" src={'https://i.ytimg.com/vi/' + youtubeVideo.id + '/' + thumbnailFile} width="1920" height="1080" alt={youtubeVideo.title} loading="lazy" />
     <div class="youtube-poster__title">{youtubeVideo.title}</div>
     <Sprite name="youtube-play" class="youtube-poster__play-icon" />
